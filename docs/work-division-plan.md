@@ -62,16 +62,11 @@ contribution and clear accountability.
 
 ## 4. Timeline
 
-| Date Range     | Phase                             | Key Deliverables                      | Lead     |
-| -------------- | --------------------------------- | ------------------------------------- | -------- |
-| Nov 1 – 5      | Phase 1 – Documentation           | README, docs, compiled Phase 1 report | Vikas    |
-| Nov 6 – 20     | Phase 2 – EDA & Visualization     | EDA notebooks, visual reports         | Meenaksh |
-| Nov 21 – Dec 3 | Phase 3 – Modeling & Presentation | Models, evaluation results, slides    | Abhishek |
-
-| Date Range     | Phase                             | Key Deliverables                   | Lead     |
-| -------------- | --------------------------------- | ---------------------------------- | -------- |
-| Nov 6 – 20     | Phase 2 – EDA & Visualization     | EDA notebooks, visual reports      | Meenaksh |
-| Nov 21 – Dec 3 | Phase 3 – Modeling & Presentation | Models, evaluation results, slides | Abhishek |
+| Date Range         | Phase                             | Key Deliverables                                                                                                  | Lead          |
+| ------------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------- |
+| **Nov 1 – 5**      | Phase 1 – Documentation           | README, Work Division Plan, Research Objectives, Hypotheses and Innovation, Dataset Description, Methodology Plan | **Vikas**     |
+| **Nov 6 – 20**     | Phase 2 – EDA & Visualization     | EDA notebooks, visual analysis reports, insights documentation                                                    | **Meenaksh** |
+| **Nov 21 – Dec 3** | Phase 3 – Modeling & Presentation | Predictive models, evaluation results, final presentation slides                                                  | **Abhishek**  |
 
 ---
 
