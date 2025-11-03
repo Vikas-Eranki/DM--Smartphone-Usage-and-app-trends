@@ -1,4 +1,4 @@
-# **Project Hypotheses **
+#Project Hypotheses
 
 This document outlines the **testable hypotheses** for the *Google Play Store App Success Analysis* project, derived from the core research questions. Each hypothesis includes a corresponding null hypothesis and a proposed methodology for testing.
 
