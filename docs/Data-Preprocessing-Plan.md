@@ -1,11 +1,11 @@
 ---
-# **Data Preprocessing Plan**
+# **🧮 Data Preprocessing Plan**
 
 This document outlines the complete **data preprocessing pipeline** for the *"Smartphone Usage and App Trends"* project.
 The goal is to clean, standardize, and transform the **Google Play Store dataset** into a ready-to-analyze form suitable for exploratory and predictive data mining.
 ---
 
-## **1. Objectives**
+## **1. 🎯 Objectives**
 
 1. **Clean and validate** the raw dataset by addressing missing values, outliers, and inconsistent data formats.
 2. **Standardize and normalize** numerical and categorical fields for analysis and modeling.
@@ -18,15 +18,16 @@ The goal is to clean, standardize, and transform the **Google Play Store dataset
 
 ---
 
-## **2. Source Dataset**
+## **2. 📂 Source Dataset**
 
-| Dataset File          | Description                                          | Key Fields Used                                                                                         |
-| --------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `googleplaystore.csv` | Core metadata and app details from Google Play Store | `App`, `Category`, `Rating`, `Reviews`, `Size`, `Installs`, `Type`, `Price`, `Content Rating`, `Genres` |
+| Dataset File                       | Description                                           | Key Fields Used                                                                                         |
+| ---------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `googleplaystore.csv`              | Core metadata and app details from Google Play Store  | `App`, `Category`, `Rating`, `Reviews`, `Size`, `Installs`, `Type`, `Price`, `Content Rating`, `Genres` |
+| `googleplaystore_user_reviews.csv` | User reviews dataset for advanced text-based insights | `App`, `Translated_Review`, `Sentiment`                                                                 |
 
 ---
 
-## **3. Data Cleaning & Standardization**
+## **3. 🧹 Data Cleaning & Standardization**
 
 ### **3.1 Missing Values**
 
@@ -56,8 +57,8 @@ The goal is to clean, standardize, and transform the **Google Play Store dataset
 
 ### **3.3 Deduplication**
 
-- Identify duplicates by `App` + `Category`.
-- Keep the record with the **highest number of Reviews**.
+- Identify duplicates by `App` + `Category`
+- Keep the record with the **highest number of Reviews**
 
 ---
 
@@ -79,7 +80,7 @@ The goal is to clean, standardize, and transform the **Google Play Store dataset
 
 ---
 
-## **4. Feature Engineering**
+## **4. ⚙️ Feature Engineering**
 
 | Feature                   | Description                                          | Purpose                             |
 | ------------------------- | ---------------------------------------------------- | ----------------------------------- |
@@ -91,9 +92,9 @@ The goal is to clean, standardize, and transform the **Google Play Store dataset
 
 ---
 
-## **5. Integration & Validation**
+## **5. 🧠 Integration & Validation**
 
-1. Merge `googleplaystore.csv` with `googleplaystore_user_reviews.csv` _(if used)_ on the `App` column.
+1. Merge `googleplaystore.csv` with `googleplaystore_user_reviews.csv` on the `App` column.
 2. Validate the merged dataset by:
 
    - Checking null counts per column
@@ -106,39 +107,45 @@ The goal is to clean, standardize, and transform the **Google Play Store dataset
 
 ## **6. Statistical Readiness Checks**
 
-1. **Normality Test:** Apply Shapiro–Wilk on `Rating` and `Installs`.
-2. **Correlation Analysis:** Pearson/Spearman correlations for numerical attributes.
+1. **Distribution Check:**  
+   Visualize key numerical fields (`Rating`, `Installs`, `Reviews`) using histograms to understand their spread and detect skewness.
+
+2. **Outlier Verification:**  
+   Use box plots to visually confirm that outliers were handled correctly after preprocessing.
+
 3. **Encoding:**
 
    - Label encode `Type` and `Content Rating`.
-   - One-hot encode `Category` for modeling.
+   - One-hot encode `Category` for modeling and visualization.
 
-4. **Feature Scaling:** Apply StandardScaler for regression-based modeling.
+4. **Feature Scaling:**  
+   Apply **Min-Max Scaling** or **StandardScaler** on numerical attributes (`Installs`, `Reviews`, `Price`) to ensure uniform range for modeling.
 
 ---
 
-## **7. Output Artifacts**
+## **7. 💾 Output Artifacts**
 
 | Artifact                    | Description                              | Format   |
 | --------------------------- | ---------------------------------------- | -------- |
 | `cleaned_playstore.csv`     | Final cleaned and formatted dataset      | CSV      |
 | `data_summary.csv`          | Summary statistics post-cleaning         | CSV      |
 | `data_preprocessing_log.md` | Record of steps, issues, and resolutions | Markdown |
+| `reviews_sentiment.csv`     | Cleaned and sentiment-tagged review data | CSV      |
 
 All processed files will be stored in the `/data/processed/` directory.
 
 ---
 
-## **8. Reproducibility & Automation**
+## **8. 🧭 Reproducibility & Automation**
 
 - All preprocessing steps will be implemented in **Python (Pandas & NumPy)**.
 - Steps will be modularized inside a notebook `data_cleaning.ipynb`.
 - Logs will track missing values, dropped rows, and outlier thresholds.
-- The pipeline will ensure full reproducibility and transparency for Phases 2 and 3.
+- The pipeline will ensure full reproducibility and transparency for Phase 2 and 3 tasks.
 
 ---
 
-## **9. Expected Outcomes**
+## **9. ✅ Expected Outcomes**
 
 - A clean, analysis-ready dataset for visualization and modeling.
 - Documented and validated preprocessing pipeline.
