@@ -1,7 +1,5 @@
 # Work Division Plan – Data Mining
 
-Project
-
 ## Project Title: Smartphone Usage and App Trends
 
 **Course:** Data Mining  
