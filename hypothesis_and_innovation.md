@@ -1,4 +1,4 @@
-#**Project Hypotheses**
+# **Project Hypotheses**
 
 This document outlines the **testable hypotheses** for the *Google Play Store App Success Analysis* project, derived from the core research questions. Each hypothesis includes a corresponding null hypothesis and a proposed methodology for testing.
 
@@ -36,7 +36,7 @@ This document outlines the **testable hypotheses** for the *Google Play Store Ap
 
   1. Segment apps by `Type` (Free, Paid).
   2. Compare `Rating` and `Installs` using **t-tests**.
-  3. Visualize differences using bar plots.
+  3. Visualize differences using bar or violin plots.
   4. Analyze correlation between price and rating.
 
 ---
