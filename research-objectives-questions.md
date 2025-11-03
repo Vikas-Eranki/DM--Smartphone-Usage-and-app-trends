@@ -1,4 +1,4 @@
-# 📘 **Research Questions & Objectives**
+# **Research Questions & Objectives**
 
 ## **1. Project Overview**
 
@@ -8,7 +8,7 @@ The project aims to analyze smartphone app usage and trends using large-scale da
 
 ---
 
-## 🎯 **Objectives**
+## **Objectives**
 
 * **Identify Key Success Drivers:**
 
@@ -36,7 +36,7 @@ The project aims to analyze smartphone app usage and trends using large-scale da
 
 ---
 
-## ❓ **Research Questions**
+## **Research Questions**
 
 ### **A. App Popularity & Marketplace Dynamics — “What Drives Success?” (Metadata Focus)**
 
@@ -99,7 +99,7 @@ The project aims to analyze smartphone app usage and trends using large-scale da
 
 ---
 
-## 🧭 **Expected Outcomes**
+## **Expected Outcomes**
 
 * **Identification of key factors** that drive app downloads, engagement, and satisfaction.
 * **Insights** into how pricing, category, and sentiment trends influence app success.
