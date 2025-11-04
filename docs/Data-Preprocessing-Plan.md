@@ -120,9 +120,9 @@ Prepare a clean, structured, and analysis-ready dataset to:
 
 ## **10. Expected Outcomes**
 
-Clean, reliable dataset ready for EDA and modeling
-Feature-rich data enabling accurate predictions
-Insights into app success factors (downloads, ratings, user sentiment)
-Interactive visualizations for category-wise installs across Free/Paid apps
+- **Clean and reliable dataset** prepared after preprocessing, ready for Exploratory Data Analysis (EDA) and modeling.
+- **Feature-rich data** enabling development of accurate and robust predictive models.
+- **Actionable insights** into factors influencing app success such as downloads, ratings, and user sentiment.
+- **Interactive visualizations** showcasing category-wise installs and comparisons between Free vs. Paid apps.
 
 ---
