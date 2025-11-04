@@ -1,154 +1,128 @@
 ---
-# **🧮 Data Preprocessing Plan**
+#  **Data Preprocessing Plan – Smartphone Usage & App Trends**
 
-This document outlines the complete **data preprocessing pipeline** for the *"Smartphone Usage and App Trends"* project.
-The goal is to clean, standardize, and transform the **Google Play Store dataset** into a ready-to-analyze form suitable for exploratory and predictive data mining.
+This document outlines the complete data preprocessing pipeline for analyzing the **Google Play Store dataset** as part of the *Smartphone Usage and App Trends* project.
 ---
 
-## **1. 🎯 Objectives**
+## **1. Objective**
 
-1. **Clean and validate** the raw dataset by addressing missing values, outliers, and inconsistent data formats.
-2. **Standardize and normalize** numerical and categorical fields for analysis and modeling.
-3. **Engineer new features** to capture patterns in app ratings, installs, and monetization types.
-4. **Prepare reusable processed datasets** for:
+Prepare a clean, structured, and analysis-ready dataset to:
 
-   - Descriptive analysis
-   - Predictive modeling
-   - Visualization and insights
+- Understand app success factors (downloads, ratings, reviews, monetization).
+- Analyze category-wise trends and user engagement patterns.
+- Enable descriptive and predictive modeling.
+- Support interactive visualizations (Top 5 apps by category and type).
 
 ---
 
-## **2. 📂 Source Dataset**
+## **2. Data Sources**
 
-| Dataset File                       | Description                                           | Key Fields Used                                                                                         |
-| ---------------------------------- | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `googleplaystore.csv`              | Core metadata and app details from Google Play Store  | `App`, `Category`, `Rating`, `Reviews`, `Size`, `Installs`, `Type`, `Price`, `Content Rating`, `Genres` |
-| `googleplaystore_user_reviews.csv` | User reviews dataset for advanced text-based insights | `App`, `Translated_Review`, `Sentiment`                                                                 |
-
----
-
-## **3. 🧹 Data Cleaning & Standardization**
-
-### **3.1 Missing Values**
-
-| Field            | Handling Strategy                                          |
-| ---------------- | ---------------------------------------------------------- |
-| `Rating`         | Drop nulls; ratings are key for modeling and analysis      |
-| `Size`           | Replace “Varies with device” with median size per category |
-| `Type`           | Fill missing with mode (“Free”)                            |
-| `Price`          | Convert missing/blank to 0                                 |
-| `Content Rating` | Fill with most common label (“Everyone”)                   |
+| Dataset                            | Description                                                            |
+| ---------------------------------- | ---------------------------------------------------------------------- |
+| `googleplaystore.csv`              | App metadata (category, rating, installs, price, content rating, etc.) |
+| `googleplaystore_user_reviews.csv` | User reviews with sentiments (Positive/Negative/Neutral)               |
 
 ---
 
-### **3.2 Type Conversion**
+## **3. Data Cleaning**
 
-- Remove non-numeric characters:
+### **3.1 Remove Duplicates**
 
-  - From `Installs` (remove `+`, `,`)
-  - From `Price` (remove `$`)
+- Identify duplicates using `App + Category`
+- Keep the entry with the highest number of `Reviews`
 
-- Convert:
+### **3.2 Handle Missing Values**
 
-  - `Installs`, `Reviews`, and `Price` → numeric
-  - `Rating` → float
+| Column           | Strategy                                                                     |
+| ---------------- | ---------------------------------------------------------------------------- |
+| `Rating`         | Drop rows where `Rating` is NaN                                              |
+| `Type`           | Replace missing or `"0"` with mode (`Free`)                                  |
+| `Content Rating` | Fill with mode                                                               |
+| `Size`           | Replace `"Varies with device"` with NaN → later fill with median by category |
+| Other Columns    | If still NaN in non-essential fields → drop those rows                       |
 
----
+### **3.3 Convert Data Types**
 
-### **3.3 Deduplication**
-
-- Identify duplicates by `App` + `Category`
-- Keep the record with the **highest number of Reviews**
-
----
-
-### **3.4 Outlier Detection and Treatment**
-
-| Field     | Method                                 | Handling                 |
-| --------- | -------------------------------------- | ------------------------ |
-| `Rating`  | IQR method                             | Clip between 1.0 and 5.0 |
-| `Reviews` | Log transformation                     | Reduce skewness          |
-| `Price`   | Cap at 100 (exclude extreme paid apps) |                          |
-
----
-
-### **3.5 Standardization**
-
-- Convert all text fields to uppercase.
-- Strip extra spaces and unify category/genre labels.
-- Merge similar categories (e.g., “GAME” and “GAMES”).
+| Column         | Conversion                                                 |
+| -------------- | ---------------------------------------------------------- |
+| `Reviews`      | Convert to numeric (int)                                   |
+| `Installs`     | Remove `+`, `,` → convert to integer                       |
+| `Price`        | Remove `$` → convert to float                              |
+| `Size`         | Convert `M` to bytes (×1,000,000), `k/K` to bytes (×1,000) |
+| `Last Updated` | Convert to datetime                                        |
+| `Genres`       | Extract primary genre before `;`                           |
 
 ---
 
-## **4. ⚙️ Feature Engineering**
+## **4. Outlier Detection & Treatment**
 
-| Feature                   | Description                                          | Purpose                             |
-| ------------------------- | ---------------------------------------------------- | ----------------------------------- |
-| `Price_Category`          | Categorical: Free / Paid / Premium                   | Understand monetization effects     |
-| `Rating_Level`            | Grouped as Low (≤3.5), Medium (3.6–4.3), High (>4.3) | Analyze satisfaction trends         |
-| `Log_Installs`            | Log-transformed install counts                       | Smooth distribution for correlation |
-| `Review_to_Install_Ratio` | Reviews ÷ Installs                                   | Measure engagement rate             |
-| `Genre_Primary`           | Extract primary genre from multiple entries          | Simplify analysis by dominant type  |
-
----
-
-## **5. 🧠 Integration & Validation**
-
-1. Merge `googleplaystore.csv` with `googleplaystore_user_reviews.csv` on the `App` column.
-2. Validate the merged dataset by:
-
-   - Checking null counts per column
-   - Ensuring column data types are consistent
-   - Verifying no duplicate apps remain
-
-3. Export final cleaned dataset as `cleaned_playstore.csv`.
+| Feature              | Method                                                              | Handling |
+| -------------------- | ------------------------------------------------------------------- | -------- |
+| `Rating`             | Values > 5 removed                                                  |          |
+| `Price`              | Cap at $100 to remove extreme values                                |          |
+| `Reviews & Installs` | Apply log transformation (`log1p()`) during analysis (not cleaning) |          |
+| `Size`               | Winsorize extreme values if necessary                               |          |
 
 ---
 
-## **6. Statistical Readiness Checks**
+## **5. Feature Engineering**
 
-1. **Distribution Check:**  
-   Visualize key numerical fields (`Rating`, `Installs`, `Reviews`) using histograms to understand their spread and detect skewness.
-
-2. **Outlier Verification:**  
-   Use box plots to visually confirm that outliers were handled correctly after preprocessing.
-
-3. **Encoding:**
-
-   - Label encode `Type` and `Content Rating`.
-   - One-hot encode `Category` for modeling and visualization.
-
-4. **Feature Scaling:**  
-   Apply **Min-Max Scaling** or **StandardScaler** on numerical attributes (`Installs`, `Reviews`, `Price`) to ensure uniform range for modeling.
+| New Feature               | Description                               |
+| ------------------------- | ----------------------------------------- |
+| `Price_Type`              | Free / Paid / Premium (`Price > 5`)       |
+| `Rating_Level`            | Low (≤3.5), Medium (3.6–4.3), High (>4.3) |
+| `Log_Installs`            | `log(Installs + 1)`                       |
+| `Review_to_Install_Ratio` | Reviews ÷ Installs                        |
+| `Days_Since_Last_Update`  | `(Today - Last Updated)`                  |
+| `Genre_Primary`           | First genre from `Genres` column          |
+| `Sentiment_Polarity`      | From user reviews dataset                 |
 
 ---
 
-## **7. 💾 Output Artifacts**
+## **6. Merge Datasets**
 
-| Artifact                    | Description                              | Format   |
-| --------------------------- | ---------------------------------------- | -------- |
-| `cleaned_playstore.csv`     | Final cleaned and formatted dataset      | CSV      |
-| `data_summary.csv`          | Summary statistics post-cleaning         | CSV      |
-| `data_preprocessing_log.md` | Record of steps, issues, and resolutions | Markdown |
-| `reviews_sentiment.csv`     | Cleaned and sentiment-tagged review data | CSV      |
-
-All processed files will be stored in the `/data/processed/` directory.
+- If using the user reviews dataset, first summarize the sentiment (positive, negative, neutral) for each app.
+- Then merge this summarized review data with the main app dataset using the app name as the common key.
+- This adds user opinion insights alongside installs, ratings, and other app attributes.
 
 ---
 
-## **8. 🧭 Reproducibility & Automation**
+## **7. Data Validation & Final Checks**
 
-- All preprocessing steps will be implemented in **Python (Pandas & NumPy)**.
-- Steps will be modularized inside a notebook `data_cleaning.ipynb`.
-- Logs will track missing values, dropped rows, and outlier thresholds.
-- The pipeline will ensure full reproducibility and transparency for Phase 2 and 3 tasks.
+| Check        | Action                                         |
+| ------------ | ---------------------------------------------- |
+| Null values  | Ensure 0 nulls remain in critical fields       |
+| Data types   | Confirm numeric/categorical fields are correct |
+| Unique apps  | Verify duplicates removed                      |
+| Value ranges | Rating (1–5), Price ≥ 0, Installs ≥ 0          |
+| Save output  | Export as `cleaned_playstore.csv`              |
 
 ---
 
-## **9. ✅ Expected Outcomes**
+## **8. Output Files**
 
-- A clean, analysis-ready dataset for visualization and modeling.
-- Documented and validated preprocessing pipeline.
-- Reliable foundation for hypothesis testing, EDA, and predictive modeling.
+| File Name               | Description                                               |
+| ----------------------- | --------------------------------------------------------- |
+| `cleaned_playstore.csv` | Final processed dataset                                   |
+| `data_summary.csv`      | Summary statistics                                        |
+| `preprocessing_log.md`  | Document of changes, dropped rows, missing values handled |
+| `reviews_sentiment.csv` | Processed user reviews dataset                            |
+
+---
+
+## **9. Tools & Libraries**
+
+- **Python:** Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+- **Visualization:** Plotly/Dash/Streamlit (for interactive plot)
+- **Notebook:** `data_preprocessing.ipynb`
+
+---
+
+## **10. Expected Outcomes**
+
+✔ Clean, reliable dataset ready for EDA and modeling
+✔ Feature-rich data enabling accurate predictions
+✔ Insights into app success factors (downloads, ratings, user sentiment)
+✔ Interactive visualizations for category-wise installs across Free/Paid apps
 
 ---
