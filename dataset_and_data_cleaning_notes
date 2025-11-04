@@ -1,0 +1,93 @@
+DATA CLEANING NOTES
+# Dataset Source
+
+Dataset: Google Play Store Apps
+
+Description: Dataset containing information on Android applications listed on Google Play, including their category, rating, reviews, size, installs, type, price, content rating, and more.
+
+# Data Cleaning Process
+## 1️ Handling Missing and Invalid Values
+
+Checked for missing values across all columns using .isna().sum().
+
+Dropped rows with NaN values in critical fields to maintain data integrity.
+
+Removed entries with invalid Rating values (greater than 5) to ensure data accuracy.
+
+Replaced ‘Varies with device’ in Size column with NaN for consistent numeric processing.
+
+Filled missing values in Content Rating with the mode of the column.
+
+For Type column:
+
+Replaced invalid values ("0") with NaN.
+
+Standardized capitalization using str.strip().str.capitalize().
+
+Dropped records with missing or invalid app type (retained only “Free” and “Paid”).
+
+## 2️ Data Type Conversion
+
+Converted Reviews to numeric using:
+
+Cleaned and converted Installs:
+
+Removed commas , and plus signs.
+
+Converted to integer type.
+
+Processed Price:
+
+Removed dollar signs ($) and converted to float for numerical computations.
+
+Ensured Rating column was numeric and within valid bounds (1.0 to 5.0).
+
+## 3️ Cleaning the Size Column
+
+Implemented a helper function convert_size() to standardize app size values:
+
+## 4️ Removing Duplicates
+
+Verified data consistency using .info() and .duplicated().
+
+Dropped duplicate app entries using the App column as reference.
+
+## 5️ Outlier Handling
+
+Checked for unrealistic values in Price, Reviews, and Installs.
+
+Ensured proper numeric ranges using summary statistics and logical thresholds.
+
+## 6️ Text Standardization
+
+Removed unnecessary whitespace and ensured consistent text formatting across columns:
+
+Category, App, Content Rating, and Genres standardized using string manipulation.
+
+## 7️ Dataset Integrity Validation
+
+Ensured logical consistency across related fields:
+
+Paid apps have nonzero prices.
+
+Ratings fall between 1.0 and 5.0.
+
+Install counts are numeric and valid.
+
+Confirmed no null or malformed entries after the final cleaning pass.
+
+## 8️ Verification
+
+Used df.info() and df.isna().sum() post-cleaning to validate:
+
+No missing or corrupted data remain.
+
+Proper data types are set for all numeric and categorical features.
+
+The dataset is now fully ready for:
+
+Exploratory Data Analysis (EDA)
+
+Visualization and statistical insights
+
+Machine learning model preparation
