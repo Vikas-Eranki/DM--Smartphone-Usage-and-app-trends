@@ -1,7 +1,7 @@
 ---
 #  **Data Preprocessing Plan – Smartphone Usage & App Trends**
 
-This document outlines the complete data preprocessing pipeline for analyzing the **Google Play Store dataset** as part of the *Smartphone Usage and App Trends* project.
+This document outlines the complete data preprocessing pipeline for analyzing the **Google Play Store dataset** as part of our *Smartphone Usage and App Trends* project.
 ---
 
 ## **1. Objective**
