@@ -1,93 +1,100 @@
-DATA CLEANING NOTES
-# Dataset Source
+# **Data Source and Dataset Description**
 
-Dataset: Google Play Store Apps
+---
 
-Description: Dataset containing information on Android applications listed on Google Play, including their category, rating, reviews, size, installs, type, price, content rating, and more.
+## **Dataset Source**
 
-# Data Cleaning Process
-## 1️ Handling Missing and Invalid Values
+**Dataset:** Google Play Store Apps  
+**Description:**  
+Dataset containing detailed information on Android applications listed on Google Play, including attributes such as **category, rating, reviews, size, installs, type, price, content rating**, and more.
 
-Checked for missing values across all columns using .isna().sum().
+---
 
-Dropped rows with NaN values in critical fields to maintain data integrity.
+## **Data Cleaning Process**
 
-Removed entries with invalid Rating values (greater than 5) to ensure data accuracy.
+---
 
-Replaced ‘Varies with device’ in Size column with NaN for consistent numeric processing.
+###1️ **Handling Missing and Invalid Values**
 
-Filled missing values in Content Rating with the mode of the column.
+- Checked for missing values across all columns using `.isna().sum()`.  
+- Dropped rows with **NaN values** in critical fields to maintain data integrity.  
+- Removed entries with **invalid Rating values** (greater than 5).  
+- Replaced `"Varies with device"` in **Size** column with `NaN` for consistent numeric processing.  
+- Filled missing values in **Content Rating** with the **mode** of the column.  
+- For **Type** column:
+  - Replaced invalid values (`"0"`) with `NaN`.  
+  - Standardized capitalization using `str.strip().str.capitalize()`.  
+  - Dropped records with missing or invalid app type — retained only `"Free"` and `"Paid"`.
 
-For Type column:
+---
 
-Replaced invalid values ("0") with NaN.
+###2️ **Data Type Conversion**
 
-Standardized capitalization using str.strip().str.capitalize().
+- Converted **Reviews** to numeric using `pd.to_numeric(errors='coerce')`.  
+- Cleaned and converted **Installs**:
+  - Removed commas `,` and plus signs `+`.  
+  - Converted to integer type.  
+- Processed **Price**:
+  - Removed dollar signs `$` and converted to `float`.  
+- Ensured **Rating** column was numeric and within valid bounds `(1.0 ≤ Rating ≤ 5.0)`.
 
-Dropped records with missing or invalid app type (retained only “Free” and “Paid”).
+---
 
-## 2️ Data Type Conversion
+###3️ **Cleaning the Size Column**
 
-Converted Reviews to numeric using:
+- Implemented a helper function `convert_size()` to **standardize app size values** (e.g., KB, MB → MB).  
+- Converted all size values into a uniform numeric format for better analysis.
 
-Cleaned and converted Installs:
+---
 
-Removed commas , and plus signs.
+###4️ **Removing Duplicates**
 
-Converted to integer type.
+- Verified data consistency using `.info()` and `.duplicated()`.  
+- Dropped **duplicate app entries** using the **App** column as a reference.  
 
-Processed Price:
+---
 
-Removed dollar signs ($) and converted to float for numerical computations.
+###5️ **Outlier Handling**
 
-Ensured Rating column was numeric and within valid bounds (1.0 to 5.0).
+- Inspected **Price, Reviews, and Installs** for unrealistic values.  
+- Defined **logical thresholds** to filter out extreme outliers.  
+- Ensured all numeric values lie within expected ranges.
 
-## 3️ Cleaning the Size Column
+---
 
-Implemented a helper function convert_size() to standardize app size values:
+###6️ **Text Standardization**
 
-## 4️ Removing Duplicates
+- Cleaned up extra whitespace and enforced consistent text casing across:  
+  - `Category`, `App`, `Content Rating`, and `Genres`.  
+- Used `.str.strip().str.title()` for uniformity and readability.
 
-Verified data consistency using .info() and .duplicated().
+---
 
-Dropped duplicate app entries using the App column as reference.
+###7️ **Dataset Integrity Validation**
 
-## 5️ Outlier Handling
+- Cross-checked logical dependencies across columns:
+  - **Paid apps** must have **nonzero prices**.  
+  - **Ratings** strictly between `1.0` and `5.0`.  
+  - **Install counts** verified to be numeric and valid.  
+- Confirmed **no null or malformed entries** remain after final cleaning.
 
-Checked for unrealistic values in Price, Reviews, and Installs.
+---
 
-Ensured proper numeric ranges using summary statistics and logical thresholds.
+###8️ **Verification**
 
-## 6️ Text Standardization
+- Used `df.info()` and `df.isna().sum()` to confirm post-cleaning validation:
+  - No missing or corrupted data remain.  
+  - Correct data types for all numeric and categorical features.  
+  - Dataset integrity fully maintained.
 
-Removed unnecessary whitespace and ensured consistent text formatting across columns:
+---
 
-Category, App, Content Rating, and Genres standardized using string manipulation.
+## **Final Output**
 
-## 7️ Dataset Integrity Validation
+The cleaned dataset is now ready for:
 
-Ensured logical consistency across related fields:
+- 🔍 **Exploratory Data Analysis (EDA)**  
+- 📊 **Visualization and Statistical Insights**  
+- 🤖 **Machine Learning Model Preparation**
 
-Paid apps have nonzero prices.
-
-Ratings fall between 1.0 and 5.0.
-
-Install counts are numeric and valid.
-
-Confirmed no null or malformed entries after the final cleaning pass.
-
-## 8️ Verification
-
-Used df.info() and df.isna().sum() post-cleaning to validate:
-
-No missing or corrupted data remain.
-
-Proper data types are set for all numeric and categorical features.
-
-The dataset is now fully ready for:
-
-Exploratory Data Analysis (EDA)
-
-Visualization and statistical insights
-
-Machine learning model preparation
+---
