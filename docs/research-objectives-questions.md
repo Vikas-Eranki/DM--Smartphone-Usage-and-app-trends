@@ -4,7 +4,7 @@
 
 The project aims to analyze smartphone app usage and trends using large-scale datasets from sources like the Google Play Store. By applying data-mining and predictive analytics techniques, the study seeks to uncover what drives app success, user satisfaction, and adoption patterns. The focus lies on how factors such as **category, price type (free vs paid), rating, reviews, and regional differences** influence app popularity and marketplace dynamics.
 
-**Dataset:** Google Play Store Apps — Kaggle
+**Dataset:** https://www.kaggle.com/datasets/lava18/google-play-store-apps 
 
 ---
 
