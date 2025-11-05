@@ -15,7 +15,7 @@ Dataset containing detailed information on Android applications listed on Google
 
 ---
 
-###1️ **Handling Missing and Invalid Values**
+1️ **Handling Missing and Invalid Values**
 
 - Checked for missing values across all columns using `.isna().sum()`.  
 - Dropped rows with **NaN values** in critical fields to maintain data integrity.  
