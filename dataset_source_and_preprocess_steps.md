@@ -15,7 +15,7 @@ Dataset containing detailed information on Android applications listed on Google
 
 ---
 
-1️ **Handling Missing and Invalid Values**
+1 **Handling Missing and Invalid Values**
 
 - Checked for missing values across all columns using `.isna().sum()`.  
 - Dropped rows with **NaN values** in critical fields to maintain data integrity.  
@@ -29,7 +29,7 @@ Dataset containing detailed information on Android applications listed on Google
 
 ---
 
-###2️ **Data Type Conversion**
+2 **Data Type Conversion**
 
 - Converted **Reviews** to numeric using `pd.to_numeric(errors='coerce')`.  
 - Cleaned and converted **Installs**:
@@ -41,7 +41,7 @@ Dataset containing detailed information on Android applications listed on Google
 
 ---
 
-###3️ **Cleaning the Size Column**
+3️ **Cleaning the Size Column**
 
 - Implemented a helper function `convert_size()` to **standardize app size values** (e.g., KB, MB → MB).  
 - Converted all size values into a uniform numeric format for better analysis.
