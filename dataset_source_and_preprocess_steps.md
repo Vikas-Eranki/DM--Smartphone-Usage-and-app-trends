@@ -41,21 +41,21 @@ Dataset containing detailed information on Android applications listed on Google
 
 ---
 
-3️ **Cleaning the Size Column**
+3 **Cleaning the Size Column**
 
 - Implemented a helper function `convert_size()` to **standardize app size values** (e.g., KB, MB → MB).  
 - Converted all size values into a uniform numeric format for better analysis.
 
 ---
 
-###4️ **Removing Duplicates**
+4 **Removing Duplicates**
 
 - Verified data consistency using `.info()` and `.duplicated()`.  
 - Dropped **duplicate app entries** using the **App** column as a reference.  
 
 ---
 
-###5️ **Outlier Handling**
+5 **Outlier Handling**
 
 - Inspected **Price, Reviews, and Installs** for unrealistic values.  
 - Defined **logical thresholds** to filter out extreme outliers.  
@@ -63,7 +63,7 @@ Dataset containing detailed information on Android applications listed on Google
 
 ---
 
-###6️ **Text Standardization**
+6 **Text Standardization**
 
 - Cleaned up extra whitespace and enforced consistent text casing across:  
   - `Category`, `App`, `Content Rating`, and `Genres`.  
@@ -71,7 +71,7 @@ Dataset containing detailed information on Android applications listed on Google
 
 ---
 
-###7️ **Dataset Integrity Validation**
+7 **Dataset Integrity Validation**
 
 - Cross-checked logical dependencies across columns:
   - **Paid apps** must have **nonzero prices**.  
@@ -81,7 +81,7 @@ Dataset containing detailed information on Android applications listed on Google
 
 ---
 
-###8️ **Verification**
+8 **Verification**
 
 - Used `df.info()` and `df.isna().sum()` to confirm post-cleaning validation:
   - No missing or corrupted data remain.  
@@ -94,8 +94,8 @@ Dataset containing detailed information on Android applications listed on Google
 
 The cleaned dataset is now ready for:
 
-- 🔍 **Exploratory Data Analysis (EDA)**  
-- 📊 **Visualization and Statistical Insights**  
-- 🤖 **Machine Learning Model Preparation**
+- **Exploratory Data Analysis (EDA)**  
+- **Visualization and Statistical Insights**  
+- **Machine Learning Model Preparation**
 
 ---
