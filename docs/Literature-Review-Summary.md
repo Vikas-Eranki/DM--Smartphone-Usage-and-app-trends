@@ -86,10 +86,6 @@ Li et al. (2022) provide conceptual understanding but do **not**:
 | Mentions update importance conceptually | Tests update impact using real maintenance metadata |
 | Recognizes pricing effects theoretically | Statistically compares Free vs Paid app performance |
 
-### **Innovation One-Liner (PPT Answer)**  
-> *“Li et al. (2022) explained the concepts of app engagement — our study applies those concepts to real Google Play Store data to generate measurable and explainable insights.”*
-
----
 
 ## ** Conclusion**
 
