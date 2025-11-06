@@ -2,82 +2,118 @@
 
 ## **1. Overview**
 
-This project utilizes the **Google Play Store Apps dataset** from Kaggle as the sole data source.  
-The dataset provides a comprehensive representation of mobile applications on the Android platform, covering app-level attributes such as category, rating, installs, and price.  
-Its depth and breadth make it ideal for examining **app market dynamics, user engagement behavior, and digital product trends** within the smartphone ecosystem.
+This project utilizes the **Google Play Store Apps dataset** from Kaggle as the **sole data source**.  
+The dataset offers a large-scale snapshot of the Android ecosystem, containing detailed metadata for **10,000+ apps**, including:
+
+- Ratings  
+- Reviews  
+- Installs  
+- Pricing and monetization  
+- Content rating  
+- Update history  
+- App and genre categories  
+
+This makes it highly suitable for analyzing **app market dynamics**, **user engagement behaviors**, and **factors influencing app popularity** across different categories.
 
 ---
 
-## **2. Dataset Details**
+## **2. Dataset Source (Official Citation)**
 
-### **Google Play Store Apps Dataset — Kaggle**
+| Field | Details |
+|------|---------|
+| **Dataset Title** | Google Play Store Apps |
+| **Author** | L. Gupta |
+| **Publication Date** | February 2019 |
+| **License** | CC BY-SA 4.0 |
+| **Dataset Link** | https://www.kaggle.com/datasets/lava18/google-play-store-apps |
 
-📘 **Source:** [Google Play Store Apps Dataset](https://www.kaggle.com/datasets/lava18/google-play-store-apps)
-
-The dataset consists of information on more than **10,000 Android applications**, capturing both **quantitative** and **qualitative** attributes that influence app performance and popularity.
-
-**Key Attributes:**
-- **App:** Name of the application  
-- **Category:** Type or genre (e.g., Education, Game, Business)  
-- **Rating:** Average user rating on the Play Store  
-- **Reviews:** Number of user reviews submitted  
-- **Installs:** Estimated download count  
-- **Type:** Free or Paid  
-- **Price:** Cost of the app (if paid)  
-- **Content Rating:** Target audience (e.g., Everyone, Teen)  
-- **Genres:** Sub-category or app genre  
-- **Last Updated:** Date of the most recent app update  
-- **Current Ver / Android Ver:** App version and Android compatibility  
+> **Required Citation:**  
+> L. Gupta, *"Google Play Store Apps,"* Feb 2019. [Online]. Available: https://www.kaggle.com/lava18/google-play-store-apps
 
 ---
 
-## **3. Justification for Dataset Selection**
+## **3. Dataset Context**
 
-The **Google Play Store dataset** was chosen because it is:
+Unlike the Apple App Store (which allows structured scraping), the **Google Play Store uses dynamic page rendering (AJAX & JQuery)**.  
+This makes automated extraction challenging.  
 
-- **Publicly accessible** and **widely used** for academic and industry research.  
-- Rich in both **behavioral** and **structural data**, supporting trend and correlation analysis.  
-- Well-suited for evaluating **app engagement, quality, pricing, and update frequency**.  
-- Provides a **real-world foundation** for analyzing:
-  - User interaction patterns  
-  - Market segmentation  
-  - Monetization models across app categories  
+The dataset was therefore scraped using **dynamic data capture methods**, ensuring:
+- **Authentic marketplace data**
+- **Real user engagement metrics**
+- **Accurate app metadata** at point of extraction
+
+This dataset has since become one of the **most widely referenced** datasets for Android market research.
 
 ---
 
-## **4. Alignment with Research Objectives**
+## **4. Dataset Structure and Key Attributes**
+
+| **Feature** | **Description** | **Example** |
+|------------|----------------|-------------|
+| App | Application name | Photo Editor |
+| Category | Primary category of the app | ART_AND_DESIGN |
+| Rating | Average user rating | 4.3 |
+| Reviews | Number of user reviews | 159 |
+| Size | App size or “Varies” indicator | 19M / Varies |
+| Installs | Download count bracket | 10,000+ / 1,000,000+ |
+| Type | Free or Paid app | Free |
+| Price | Cost for paid apps | $0 / $1.99 |
+| Content Rating | Target audience age group | Everyone / Teen |
+| Genres | Secondary or multiple genre tags | Art & Design; Creativity |
+| Last Updated | Date last updated | July 2018 |
+| Current Ver / Android Ver | App version & OS compatibility | 1.0.9 / 4.1+ |
+
+---
+
+## **5. Justification for Dataset Selection**
+
+This dataset is chosen because it is:
+
+- **Public and reproducible**
+- Contains **both behavioral and structural app features**
+- Allows **market trend, engagement pattern, and pricing analyses**
+- Supports research into:
+  - **App popularity drivers**
+  - **Monetization (Free vs Paid)**
+  - **Category-based performance**
+  - **Influence of updates on user satisfaction**
+
+It aligns directly with the project’s aim to analyze **smartphone usage and app trends**.
+
+---
+
+## **6. Alignment with Research Objectives**
 
 | **Research Focus** | **Dataset Field(s)** | **Insights Enabled** |
-|---------------------|----------------------|----------------------|
-| App popularity and engagement | `Installs`, `Reviews`, `Rating` | Measure user interest and satisfaction |
-| Market segmentation by category | `Category`, `Genres` | Identify dominant app sectors |
-| Monetization and pricing trends | `Type`, `Price` | Analyze free vs. paid app performance |
-| Maintenance and performance link | `Last Updated`, `Rating` | Study update frequency vs. app quality |
+|--------------------|---------------------|----------------------|
+| App popularity & engagement | Installs, Reviews, Rating | Identify key success indicators |
+| Category trends | Category, Genres | Determine dominant & emerging app markets |
+| Monetization strategies | Type, Price | Compare free vs paid app performance |
+| Update impact on performance | Last Updated, Rating | Evaluate developer maintenance & app longevity |
 
 ---
 
-## **5. Ethical and Practical Considerations**
+## **7. Ethical and Practical Considerations**
 
-- The dataset is **open-source** and **ethically collected**, containing **no personal identifiers**.  
-- Analysis follows **academic integrity** and **Kaggle’s licensing terms**.  
-- **Data preprocessing and transformation** will ensure clean, reliable, and reproducible results.  
+- No personal / sensitive user data is included.
+- Dataset follows **open-source CC BY-SA 4.0 licensing**.
+- All analyses will comply with **academic and reproducibility standards**.
 
 ---
 
-## **6. Rationale**
+## **8. Final Rationale**
 
-The **Google Play Store Apps dataset** provides a powerful lens through which app ecosystems can be studied systematically.  
-Its structured attributes allow:
+Using this **single, rich, and structured dataset** ensures:
 
-- **Quantitative comparison** of app performance indicators, such as ratings and installs.  
-- **Evaluation of category-level differences** that inform user preferences.  
-- **Insight into the relationship** between app price, update patterns, and popularity.  
+- **Clarity** in analysis
+- **Consistency** in research methodology
+- **Real-world relevance** of findings
 
-By focusing on this **single, rich dataset**, the study maintains:
-- **Clarity**  
-- **Focus**  
-- **Analytical consistency**, avoiding redundancy from multiple disparate sources.  
+The dataset provides a strong foundation to understand:
+- What drives app success,
+- How engagement patterns differ across app categories,
+- How pricing and update frequency influence user perception.
 
-This dataset effectively bridges both **academic relevance** and **real-world applicability**, making it an ideal choice for understanding **mobile app market dynamics** and **user behavior** in a data-driven manner.
+This makes it highly effective for research on **Smartphone Usage & App Trends**.
 
 ---
