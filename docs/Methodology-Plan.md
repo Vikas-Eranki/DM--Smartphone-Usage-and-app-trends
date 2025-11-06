@@ -1,112 +1,149 @@
 ---
-#  **Methodology Plan – Smartphone Usage & App Trends**
+# Methodology Plan
 
-This methodology outlines the step-by-step approach used to explore smartphone app usage patterns, trends in downloads, ratings, and factors influencing app success on the Google Play Store.
+### Smartphone Usage and App Trends Project
+
+This document outlines the comprehensive methodology framework for the _Smartphone Usage and App Trends_ project.
+It integrates research background, data preprocessing, exploratory analysis, visualization, and predictive modeling—structured across the three project phases and aligned with the team’s leadership rotation.
 ---
 
-## **1. Problem Understanding**
+## 1. Literature Review Summary (Phase 1)
 
-- Understand how app categories, ratings, installs, and pricing models influence success.
-- Identify trends in user behavior, engagement, and satisfaction.
-- Solve key questions:
+The literature review establishes a theoretical foundation for understanding app market dynamics, consumer behavior, and digital adoption trends.
 
-  - Which app categories dominate downloads?
-  - Do higher ratings lead to more installs?
-  - Are free apps rated better than paid apps?
-  - What do user reviews reveal about expectations?
+• **App Popularity Determinants:**
+Research emphasizes that _app ratings_, _number of installs_, and _user engagement metrics_ directly influence app visibility and long-term success (H1, H2).
 
----
+• **Category-Wise Performance:**
+Studies suggest certain categories (e.g., _Games, Communication, Tools_) dominate installs and engagement, indicating niche-driven market segmentation (H3).
 
-## **2. Data Collection**
+• **Pricing & Monetization Strategies:**
+Comparative analyses of _free vs. paid apps_ reveal that freemium models often outperform paid apps in installs but underperform in average rating due to in-app purchase dissatisfaction (H4).
 
-| Source                             | Description                                                             |
-| ---------------------------------- | ----------------------------------------------------------------------- |
-| `googleplaystore.csv`              | App metadata including ratings, installs, size, category, price, etc.   |
-| `googleplaystore_user_reviews.csv` | User reviews with sentiments (optional but useful for deeper analysis). |
-| Additional                         | Web-scraped data or App Annie trends for time-series insights.          |
+• **User Sentiment Analysis:**
+Text-mining literature highlights that _review polarity_ and _keyword frequency_ can serve as strong predictors for app retention and uninstall behavior (H5).
 
----
-
-## **3. Data Preprocessing**
-
-> Detailed in the preprocessing plan(Data-Preprocessing-Plan), summarized here:
-
-- Remove duplicates and invalid entries.
-- Clean and standardize columns (Installs, Price, Size, Reviews, etc.).
-- Handle missing values logically.
-- Convert data types and extract primary genres.
-- Create meaningful features (Price Type, Rating Levels, Log Installs, etc.).
-- Merge review sentiments.
+• **Predictive Modeling in App Markets:**
+Prior works apply _Regression_ and _Classification_ models to estimate installs or ratings based on features like _reviews count, price, and content rating_ (H6).
 
 ---
 
-## **4. Exploratory Data Analysis (EDA)**
+## 2. Data Preprocessing Plan (Phase 1)
 
-Analyze the cleaned dataset to identify trends and patterns:
+All preprocessing tasks will be implemented in the `data_preprocessing.ipynb` notebook to ensure clean, consistent, and analysis-ready data.
 
-**Descriptive Analysis:**
+### 2.1 Handling Missing and Invalid Values
 
-- Distribution of ratings.
-- Most popular categories by number of apps and installs.
-- Free vs Paid apps: count, average ratings, download comparison.
-- Top 5 apps per category by installs.
+• **Rating:**
+Impute missing values using median per _app category_ to preserve category-level distribution (H1).
+• **Type / Price:**
+Replace missing or inconsistent entries (e.g., blank price fields) using logical inferences — if Type = Free → Price = 0.
+• **Content Rating:**
+Standardize inconsistent text values (e.g., “Everyone 10+” vs “Everyone”).
 
-**Diagnostic Analysis:**
+### 2.2 Outlier & Anomaly Treatment
 
-- Relationship between installs and ratings.
-- Do more reviews = more installs?
-- Which categories have the highest rated apps?
-- How often are apps updated?
+• **Installs:**
+Remove non-numeric symbols (`+`, `,`) and convert to integer.
+Detect and handle extreme outliers (> 100M installs) using percentile-based capping.
+• **Reviews:**
+Drop apps with _reviews > installs_, indicating erroneous entries.
+• **Price:**
+Remove apps with unrealistically high price values beyond the 99th percentile.
 
-**Visualization Tools:**
-Bar charts, heatmaps, scatterplots, boxplots, pie charts.
+### 2.3 Feature Engineering
 
----
-
-## **5. Interactive Visualization Component**
-
-- Build an interactive chart (using Plotly/Streamlit/Dash).
-- User selects:
-
-  - App Category (e.g., Game, Health, Finance)
-  - Type (Free or Paid)
-
-- Output:
-
-  - Bar chart showing top 5 most downloaded apps in that selection.
-
----
-
-## **6. Predictive & Descriptive Modeling (Optional but Recommended)**
-
-| Model Type         | Purpose                                                         |
-| ------------------ | --------------------------------------------------------------- |
-| Regression         | Predict number of installs or ratings based on features.        |
-| Classification     | Predict whether an app will be “successful” (top 10% installs). |
-| Sentiment Analysis | Use user reviews to analyze positive/negative feedback impact.  |
+• **Log Transformations:**
+Apply log scaling to _Reviews_ and _Installs_ for normalization.
+• **Monetization Feature:**
+Create a binary feature `is_paid` (1 if Price > 0, else 0).
+• **Category-Level Aggregation:**
+Compute average _Rating_, _Installs_, and _Reviews_ per category for comparative trend analysis.
+• **Derived Metrics:**
+Define `Review-to-Install Ratio` = Reviews / Installs as a proxy for engagement intensity (H2).
 
 ---
 
-## **7. Insights & Storytelling**
+## 3. Exploratory Data Analysis (Phase 2)
 
-Key areas of insights:
+_Lead:_ **Meenaksh**
 
-- Which categories show highest growth and engagement.
-- Whether ratings or marketing influence downloads more.
-- Monetization impact (Free vs Paid vs Premium).
-- User sentiment trends (ads, privacy, crash issues, etc.).
-- Recommendations for developers (e.g., frequent updates, freemium strategy, user engagement improvement).
+The EDA phase explores relationships between app features, usage patterns, and success indicators to validate hypotheses.
+
+| Focus Area           | Supported Hypotheses | Analytical Techniques / Expected Output                                                        |
+| :------------------- | :------------------- | :--------------------------------------------------------------------------------------------- |
+| Category Trends      | H3                   | Identify dominant app categories by installs and ratings; create rank-wise visual comparisons. |
+| Ratings vs Installs  | H1, H2               | Correlation analysis to test if higher ratings influence install counts.                       |
+| Free vs Paid Apps    | H4                   | Compare distributions of installs and ratings between monetization types.                      |
+| Reviews & Engagement | H5                   | Analyze relation between review volume and average rating.                                     |
+| Size & Price Impact  | H6                   | Assess how app size and price affect user satisfaction (rating).                               |
 
 ---
 
-## **8. Final Deliverables**
+## 4. Visualization Plan (Phase 2 & 3)
 
-| File/Output                   | Description                                                |
-| ----------------------------- | ---------------------------------------------------------- |
-| `cleaned_googleplaystore.csv` | Processed dataset ready for modeling and visualization.    |
-| `methodology.md`              | This document.                                             |
-| Interactive Visualization     | Top 5 apps per category and type.                          |
-| EDA Plots & Insights Report   | Visual findings with explanations.                         |
-| Predictive Model (optional)   | Trained model with performance metrics and interpretation. |
+Visual analysis helps communicate trends and correlations effectively.
+Plots will be generated using **Matplotlib** and **Seaborn**, with the possibility of interactive dashboards in later phases.
+
+| Phase   | Visualization Type                            | Purpose / Insight                                                     |
+| :------ | :-------------------------------------------- | :-------------------------------------------------------------------- |
+| Phase 2 | Bar Chart (Category vs Installs)              | Identify top-performing app categories (H3).                          |
+| Phase 2 | Scatter Plot (Rating vs Installs)             | Examine correlation between user satisfaction and popularity (H1).    |
+| Phase 2 | Box Plot (Free vs Paid – Rating Distribution) | Compare monetization impact on user ratings (H4).                     |
+| Phase 2 | Histogram (App Size)                          | Understand distribution of app sizes and possible impact on installs. |
+| Phase 3 | Heatmap (Feature Correlation)                 | Display multivariate relationships among features before modeling.    |
+| Phase 3 | Pair Plot / Regression Plot                   | Visualize predicted vs actual installs or ratings post-modeling.      |
+
+---
+
+## 5. Model Training & Evaluation Plan (Phase 3)
+
+_Lead:_ **Abhishek**
+
+Phase 3 focuses on predictive modeling to determine the factors driving app popularity and performance.
+
+### A. Predictive Modeling Tasks
+
+| Prediction Task                     | Hypothesis | Model(s)                                     | Evaluation Metrics       |
+| :---------------------------------- | :--------- | :------------------------------------------- | :----------------------- |
+| App Popularity Prediction           | H1, H2     | Multiple Linear Regression, Random Forest    | R², RMSE                 |
+| Rating Classification (High vs Low) | H4         | Logistic Regression, Decision Tree           | Accuracy, F1-Score       |
+| Category Importance Analysis        | H3         | Feature Importance via Random Forest         | Feature Importance Score |
+| Sentiment-Driven Success (optional) | H5         | Naïve Bayes (if text reviews are integrated) | Precision, Recall        |
+
+---
+
+### B. Validation & Optimization
+
+• **Train-Test Split (80-20):**
+Ensure model generalization and avoid overfitting.
+
+• **Cross-Validation:**
+Use _k-fold (k=5)_ for robust performance estimation.
+
+• **Hyperparameter Tuning:**
+Apply _GridSearchCV_ for optimizing tree-based models (e.g., max depth, n_estimators).
+
+• **Model Interpretability:**
+Use _SHAP_ and _Feature Importance plots_ to explain influential attributes on installs and ratings.
+
+---
+
+## 6. Deliverables by Phase Summary
+
+| Phase       | Focus Area                    | Primary Output                                                |
+| :---------- | :---------------------------- | :------------------------------------------------------------ |
+| **Phase 1** | Documentation & Preprocessing | Cleaned dataset, literature and preprocessing plan            |
+| **Phase 2** | EDA                           | Insights and validated hypotheses                             |
+| **Phase 3** | Predictive Modeling           | Trained models, evaluation metrics, and interpretive insights |
+
+---
+
+## 7. Expected Outcomes
+
+- Clear understanding of key factors influencing app success on Google Play Store
+- Validated trends in category performance and monetization impact
+- Predictive framework capable of estimating app popularity or rating
+- Visual evidence supporting market behavior insights for mobile app developers
 
 ---

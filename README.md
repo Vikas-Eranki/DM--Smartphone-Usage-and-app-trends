@@ -47,11 +47,11 @@ It supports data-mining tasks such as correlation analysis, classification, and 
 
 The project follows three phases:
 
-| Phase | Focus                            | Description                                                             |
-| ----- | -------------------------------- | ----------------------------------------------------------------------- |
-| **1** | Planning & Documentation         | Problem definition, dataset study, hypotheses, and methodology planning |
-| **2** | Data Exploration & Visualization | Data cleaning, exploratory analysis, and visualization of trends        |
-| **3** | Predictive Modeling & Insights   | Building and evaluating models, generating insights                     |
+| Phase | Focus                          | Description                                                             |
+| ----- | ------------------------------ | ----------------------------------------------------------------------- |
+| **1** | Planning & Documentation       | Problem definition, dataset study, hypotheses, and methodology planning |
+| **2** | Data Exploration               | Data cleaning, exploratory analysis.                                    |
+| **3** | Predictive Modeling & Insights | Building and evaluating models, generating insights                     |
 
 ---
 

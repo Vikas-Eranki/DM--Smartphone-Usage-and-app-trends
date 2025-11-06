@@ -23,7 +23,7 @@ contribution and clear accountability.
 | Phase   | Team Lead | Key Responsibility                                           |
 | ------- | --------- | ------------------------------------------------------------ |
 | Phase 1 | Vikas     | Planning, methodology, preprocessing plan, and documentation |
-| Phase 2 | Meenaksh  | Exploratory data analysis and visualization                  |
+| Phase 2 | Meenaksh  | Exploratory data analysis,Predictive/Descriptive Analysis    |
 | Phase 3 | Abhishek  | Predictive modeling, evaluation, and presentation            |
 
 ---
@@ -40,13 +40,13 @@ contribution and clear accountability.
 
 ---
 
-### Phase 2 – Data Exploration and Visualization (Nov 6 – 20)
+### Phase 2 – Data Exploration (Nov 6 – 20)
 
-| Member   | Tasks                                        | Deliverables                                    |
-| -------- | -------------------------------------------- | ----------------------------------------------- |
-| Meenaksh | Lead EDA, create visuals, summarize insights | EDA_Visualizations.ipynb , Insights_Report.docx |
-| Vikas    | Handle preprocessing and feature engineering | Preprocessing_Scripts.ipynb                     |
-| Abhishek | Perform correlation and trend analysis       | Category_Trend_Analysis.ipynb                   |
+| Member   | Tasks                                        | Deliverables                     |
+| -------- | -------------------------------------------- | -------------------------------- |
+| Meenaksh | Lead EDA, create visuals, summarize insights | EDA.ipynb , Insights_Report.docx |
+| Vikas    | Handle preprocessing and feature engineering | Preprocessing_Scripts.ipynb      |
+| Abhishek | Perform correlation and trend analysis       | Category_Trend_Analysis.ipynb    |
 
 ---
 
@@ -62,11 +62,11 @@ contribution and clear accountability.
 
 ## 4. Timeline
 
-| Date Range         | Phase                             | Key Deliverables                                                                                                  | Lead          |
-| ------------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------- |
-| **Nov 1 – 5**      | Phase 1 – Documentation           | README, Work Division Plan, Research Objectives, Hypotheses and Innovation, Dataset Description, Methodology Plan | **Vikas**     |
-| **Nov 6 – 20**     | Phase 2 – EDA & Visualization     | EDA notebooks, visual analysis reports, insights documentation                                                    | **Meenaksh** |
-| **Nov 21 – Dec 3** | Phase 3 – Modeling & Presentation | Predictive models, evaluation results, final presentation slides                                                  | **Abhishek**  |
+| Date Range         | Phase                             | Key Deliverables                                                                                                  | Lead         |
+| ------------------ | --------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------ |
+| **Nov 1 – 5**      | Phase 1 – Documentation           | README, Work Division Plan, Research Objectives, Hypotheses and Innovation, Dataset Description, Methodology Plan | **Vikas**    |
+| **Nov 6 – 20**     | Phase 2 – EDA                     | EDA notebooks, analysis reports, insights documentation                                                           | **Meenaksh** |
+| **Nov 21 – Dec 3** | Phase 3 – Modeling & Presentation | Predictive models, evaluation results, final presentation slides                                                  | **Abhishek** |
 
 ---
 
