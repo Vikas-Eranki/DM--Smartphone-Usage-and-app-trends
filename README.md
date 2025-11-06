@@ -47,21 +47,21 @@ It supports data-mining tasks such as correlation analysis, classification, and 
 
 The project follows three phases:
 
-| Phase | Focus                            | Description                                                             |
-| ----- | -------------------------------- | ----------------------------------------------------------------------- |
-| **1** | Planning & Documentation         | Problem definition, dataset study, hypotheses, and methodology planning |
-| **2** | Data Exploration & Visualization | Data cleaning, exploratory analysis, and visualization of trends        |
-| **3** | Predictive Modeling & Insights   | Building and evaluating models, generating insights                     |
+| Phase | Focus                          | Description                                                             |
+| ----- | ------------------------------ | ----------------------------------------------------------------------- |
+| **1** | Planning & Documentation       | Problem definition, dataset study, hypotheses, and methodology planning |
+| **2** | Data Exploration               | Data cleaning, exploratory analysis.                                    |
+| **3** | Predictive Modeling & Insights | Building and evaluating models, generating insights                     |
 
 ---
 
 ## 6. Team and Leadership
 
-| Name         | Lead         | Primary Focus                                          |
-| ------------ | ------------ | ------------------------------------------------------ |
-| **Vikas**    | Phase 1 Lead | Methodology, preprocessing , documentation integration |
-| **Meenaksh** | Phase 2 Lead | Research objectives, hypotheses, literature review     |
-| **Abhishek** | Phase 3 Lead | Dataset rationale, data description, final review      |
+| Name         | Lead         | Primary Focus                                              |
+| ------------ | ------------ | ---------------------------------------------------------- |
+| **Vikas**    | Phase 1 Lead | Methodology, preprocessing plan, documentation integration |
+| **Meenaksh** | Phase 2 Lead | Research objectives, hypotheses, literature review         |
+| **Abhishek** | Phase 3 Lead | Dataset rationale, data description, final review          |
 
 **Leadership Rotation:**
 
@@ -96,17 +96,19 @@ smartphone-app-trends/
 │   ├── raw/
 │   │   └── googleplaystore.csv
 │   └── processed/
-│       └── googleplaystore_cleaned.csv
+│       └── cleaned_sample.csv
 │
 ├── docs/
-│   ├── Work_Division_Plan.docx
-│   ├── Research_Questions.docx
-│   ├── Hypotheses_and_Innovation.docx
-│   ├── Literature_Review_Summary.docx
-│   └── Methodology_Plan.docx
+│   ├── work_division_plan.docx
+│   ├── research_objectives.docx
+│   ├── hypotheses_and_innovation.docx
+│   ├── dataset_description_and_rationale.docx
+│   ├── literature_review_summary.docx
+│   ├── data_preprocessing_plan.docx
+│   └── methodology_plan.docx
 │
 ├── notebooks/
-│   └── Preprocessing.ipynb
+│   └── data_exploration.ipynb
 │
 ├── reports/
 │   └── phase1_report_compiled.pdf
