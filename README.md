@@ -57,11 +57,11 @@ The project follows three phases:
 
 ## 6. Team and Leadership
 
-| Name         | Lead         | Primary Focus                                              |
-| ------------ | ------------ | ---------------------------------------------------------- |
-| **Vikas**    | Phase 1 Lead | Methodology, preprocessing plan, documentation integration |
-| **Meenaksh** | Phase 2 Lead | Research objectives, hypotheses, literature review         |
-| **Abhishek** | Phase 3 Lead | Dataset rationale, data description, final review          |
+| Name         | Lead         | Primary Focus                                          |
+| ------------ | ------------ | ------------------------------------------------------ |
+| **Vikas**    | Phase 1 Lead | Methodology, preprocessing , documentation integration |
+| **Meenaksh** | Phase 2 Lead | Research objectives, hypotheses, literature review     |
+| **Abhishek** | Phase 3 Lead | Dataset rationale, data description, final review      |
 
 **Leadership Rotation:**
 
@@ -96,19 +96,17 @@ smartphone-app-trends/
 │   ├── raw/
 │   │   └── googleplaystore.csv
 │   └── processed/
-│       └── cleaned_sample.csv
+│       └── googleplaystore_cleaned.csv
 │
 ├── docs/
-│   ├── work_division_plan.docx
-│   ├── research_objectives.docx
-│   ├── hypotheses_and_innovation.docx
-│   ├── dataset_description_and_rationale.docx
-│   ├── literature_review_summary.docx
-│   ├── data_preprocessing_plan.docx
-│   └── methodology_plan.docx
+│   ├── Work_Division_Plan.docx
+│   ├── Research_Questions.docx
+│   ├── Hypotheses_and_Innovation.docx
+│   ├── Literature_Review_Summary.docx
+│   └── Methodology_Plan.docx
 │
 ├── notebooks/
-│   └── data_exploration.ipynb
+│   └── Preprocessing.ipynb
 │
 ├── reports/
 │   └── phase1_report_compiled.pdf
