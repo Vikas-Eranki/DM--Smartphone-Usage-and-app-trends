@@ -15,7 +15,7 @@ The questions are categorized into **four primary domains** — *App Domain*, *U
 
 ---
 
-## **A. App Domain**
+## **A. App Domain:**
 
 ### **1. App Evolution & Market Dynamics:**
 How do globalization and localization trends influence the evolution, adoption, and decline of mobile applications across regions?
@@ -28,7 +28,7 @@ What are the most effective approaches for fusing heterogeneous app usage data �
 
 ---
 
-## **B. User Domain**
+## **B. User Domain:**
 
 ### **1. Linking Physical Activities and App Usage:**
 What patterns exist between users’ physical-world activities and their smartphone app interactions, and how can these be leveraged for smart recommendations?
@@ -41,7 +41,7 @@ How can deep learning explainer models make app usage predictions more interpret
 
 ---
 
-## **C. Smartphone Domain**
+## **C. Smartphone Domain:**
 
 ### **1. Energy Efficiency Optimization:**
 How can app scheduling algorithms and API usage be optimized to minimize energy drain while maintaining user experience quality?
@@ -51,7 +51,7 @@ How can large-scale app usage and mobility data be leveraged to uncover urban dy
 
 ---
 
-## **D. Cross-Domain (Ethics & Privacy)**
+## **D. Cross-Domain (Ethics & Privacy):**
 
 ### **1. Ethical AI and Data Governance:**
 What frameworks can ensure ethical data collection and anonymization while maintaining analytical value for large-scale app usage studies?
