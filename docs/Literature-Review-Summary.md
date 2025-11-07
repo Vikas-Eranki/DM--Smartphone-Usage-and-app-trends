@@ -87,7 +87,7 @@ Li et al. (2022) provide conceptual understanding but do **not**:
 | Recognizes pricing effects theoretically | Statistically compares Free vs Paid app performance |
 
 
-## ** Conclusion**
+## **Conclusion**
 
 This literature review establishes the theoretical foundation for analyzing app usage behavior and performance trends. By applying the engagement, category, pricing, and maintenance insights discussed in **Li et al. (2022)** to the structured **Google Play Store dataset (Gupta, 2019)**, this study aims to:
 
