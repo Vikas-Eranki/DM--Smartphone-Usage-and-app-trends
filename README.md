@@ -12,7 +12,7 @@ This project analyzes Google Play Store data to identify patterns in app perform
 
 ---
 
-## 2. Problem Definition for Phase 2
+## 2. Problem Definition
 
 1. Which app categories dominate the Play Store ecosystem
 2. How ratings, installs, reviews, and updates influence app success
