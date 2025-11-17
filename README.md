@@ -130,7 +130,7 @@ smartphone-app-trends/
 
 ---
 
-## 10. Phase 1 Deliverables
+## 10. Phase 2 Deliverables
 
 - Three EDA Notebooks: App / User / Smartphone domains
 - Feature Engineering Document
