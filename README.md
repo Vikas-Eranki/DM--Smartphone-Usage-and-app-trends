@@ -158,5 +158,5 @@ smartphone-app-trends/
 - High-quality EDA
 - Preliminary evidence for hypotheses
 - Deep domain insights using visualizations
-- Clean and engineered data for predictive modeling**
+- Clean and engineered data for predictive modeling  
 This phase sets the foundation for Phase 3, where advanced ML models, SHAP explainability, and hypothesis testing will be executed.
