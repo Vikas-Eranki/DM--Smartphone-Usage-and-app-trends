@@ -19,7 +19,7 @@ This project analyzes Google Play Store data to identify patterns in app perform
 3. Free vs Paid app behavior patterns
 4. How update frequency relates to app quality and user satisfaction
 5. How user behavior and smartphone characteristics shape app trends
-Phase 2 focuses on discovering insights through EDA and preparing the groundwork for predictive and descriptive modeling.
+- Phase 2 focuses on discovering insights through EDA and preparing the groundwork for predictive and descriptive modeling.
 
 ---
 
