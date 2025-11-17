@@ -10,16 +10,18 @@ Smartphones have transformed how people communicate, access services, and consum
 
 This project analyzes Google Play Store data to identify patterns in app performance, including the impact of categories, ratings, installs, and pricing models. Using data-mining techniques, it explores the factors that shape user engagement and app success.
 
+Phase 2 performs an exemplary Exploratory Data Analysis (EDA) to uncover patterns related to app updates, user expectations, performance, security concerns, and category dynamics. Insights obtained here form the analytical foundation for the predictive and descriptive models in Phase 3.
+
 ---
 
 ## 2. Problem Definition
 
-1. Which app categories dominate the Play Store ecosystem
-2. How ratings, installs, reviews, and updates influence app success
-3. Free vs Paid app behavior patterns
-4. How update frequency relates to app quality and user satisfaction
-5. How user behavior and smartphone characteristics shape app trends
-- Phase 2 focuses on discovering insights through EDA and preparing the groundwork for predictive and descriptive modeling.
+- Whether frequent updates maintain relevance and trust
+- How reviews, ratings, and installs evolve with user expectations
+- How performance issues impact long-term retention
+- How feature-rich vs lightweight apps differ in satisfaction
+- Why security concerns, especially in finance apps, lead to drop-offs
+- How apps compete across categories over time
 
 ---
 
@@ -30,6 +32,7 @@ This project analyzes Google Play Store data to identify patterns in app perform
 3. Prepare clean, transformed, engineered datasets for modeling.
 4. Begin validating hypotheses through early descriptive patterns.
 5. Set up the modeling pipeline for Phase 3 (baseline + advanced models).
+6. Clustering, dimensionality reduction, and preparatory modeling steps
 
 ---
 
@@ -43,7 +46,15 @@ It supports data-mining tasks such as correlation analysis, classification, and 
 
 ---
 
-## 5. Methodology Overview
+## 5. Exploratory Research Analysis for EDA
+
+1) How do frequent updates, the number of new reviews, and changing rankings in top categories help us understand what users expect and how top apps compete over time.
+2) Users have high expectations for security, especially in financial apps. Any privacy or vulnerability issue reduces trust and usage.
+3) How do feature-rich apps (large size, multiple permissions, many functionalities) compare to lightweight apps in terms of user satisfaction, update frequency, and long-term retention across different categories?
+
+---
+
+## 6. Methodology Overview
 
 | Stage                           | Description                                                   |
 | ------------------------------- | ------------------------------------------------------------- |
@@ -56,7 +67,7 @@ It supports data-mining tasks such as correlation analysis, classification, and 
 
 ---
 
-## 6. Team and Leadership
+## 7. Team and Leadership
 
 | Name         | Lead         | Primary Focus                                              |
 | ------------ | ------------ | ---------------------------------------------------------- |
@@ -75,7 +86,7 @@ Detailed phase-wise task allocations and individual responsibilities are documen
 
 ---
 
-## 7. Workflow & GitHub Usage
+## 8. Workflow & GitHub Usage
 
 - All tasks are organized and tracked using a shared **Notion To-Do board**, where deadlines and responsibilities are clearly assigned.
 - Each member works on a **separate Git branch** named after their task (e.g., `vikas/methodology-plan`, `meenaksh/literature-review`).
@@ -88,7 +99,7 @@ Detailed phase-wise task allocations and individual responsibilities are documen
 
 ---
 
-## 8. Repository Structure
+## 9. Repository Structure
 
 ```
 smartphone-app-trends/
@@ -121,32 +132,31 @@ smartphone-app-trends/
 
 ---
 
-## 9. Tools and Technologies
+## 10. Tools and Technologies
 
 - Python (Pandas, NumPy, Matplotlib, Seaborn)
+- Scikit-learn
 - Jupyter Notebook
 - GitHub for version control
 - Google Docs / Notion for collaboration
 
 ---
 
-## 10. Phase 2 Deliverables
+## 11. Phase 2 Deliverables
 
-- Three EDA Notebooks: App / User / Smartphone domains
-- Feature Engineering Document
-- Updated Research Methodology (Phase 2)
-- 10–12 insight summaries mapped to research questions
-- Clustering and PCA notebook
-- Phase 2 Insights PDF Report
-- Team Contribution Log
+| Category                              | Deliverables                                                                                                                                                                                                                                                                                      |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Exploratory Data Analysis (EDA)**   | • EDA notebooks based on research questions and hypothesis<br>• Visualizations including novel charts (treemap, PCA, clusters)<br>• Cleaned & transformed dataset for analysis<br>• Insight summary (10–12 insights) aligned with the 3 final research questions                |
+| **Research Methodology**              | • Updated Phase-2 methodology document (approach, justification, techniques)<br>• Feature engineering strategy (variables for modeling)<br>• Preliminary linkage of EDA findings to research questions and hypotheses                                                                             |
+| **Predictive & Descriptive Analysis** | • Baseline modeling preparation notebooks (variable checks, preprocessing outputs)<br>• PCA & clustering analysis for descriptive insights<br>• Pre-modeling plots: correlations, feature distributions, clusters<br>• Model-readiness datasets and preprocessing pipeline (for Phase 3 modeling) |
+
 
 ---
 
-## 11. Conclusion
+## 12. Conclusion
 
-Phase 2 shifts the project from planning to real analytical work, producing:
 - High-quality EDA
 - Preliminary evidence for hypotheses
-- Deep domain insights
-- Clean and engineered data for predictive modeling
-- This phase sets the foundation for Phase 3, where advanced ML models, SHAP explainability, and hypothesis testing will be executed.
+- Deep domain insights using visualizations
+- Clean and engineered data for predictive modeling**
+This phase sets the foundation for Phase 3, where advanced ML models, SHAP explainability, and hypothesis testing will be executed.
