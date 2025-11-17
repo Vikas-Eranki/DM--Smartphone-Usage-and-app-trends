@@ -149,4 +149,4 @@ Phase 2 shifts the project from planning to real analytical work, producing:
 - Preliminary evidence for hypotheses
 - Deep domain insights
 - Clean and engineered data for predictive modeling
-This phase sets the foundation for Phase 3, where advanced ML models, SHAP explainability, and hypothesis testing will be executed.
+- This phase sets the foundation for Phase 3, where advanced ML models, SHAP explainability, and hypothesis testing will be executed.
