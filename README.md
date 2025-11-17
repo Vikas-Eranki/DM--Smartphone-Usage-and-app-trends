@@ -1,6 +1,6 @@
 # Smartphone Usage and App Trends
 
-**Data Mining Project – Phase 1**
+**Data Mining Project – Phase 2**
 
 ---
 
@@ -12,24 +12,24 @@ This project analyzes Google Play Store data to identify patterns in app perform
 
 ---
 
-## 2. Problem Definition
+## 2. Problem Definition for Phase 2
 
-The study examines how various attributes influence app success on the Play Store. It focuses on:
-
-- Dominant app categories and their growth trends
-- Correlation between app ratings and installs
-- Differences between free and paid apps in satisfaction and engagement
-- Common user concerns and expectations seen in reviews
+1. Which app categories dominate the Play Store ecosystem
+2. How ratings, installs, reviews, and updates influence app success
+3. Free vs Paid app behavior patterns
+4. How update frequency relates to app quality and user satisfaction
+5. How user behavior and smartphone characteristics shape app trends
+Phase 2 focuses on discovering insights through EDA and preparing the groundwork for predictive and descriptive modeling.
 
 ---
 
 ## 3. Objectives
 
-1. Identify leading app categories and usage trends.
-2. Examine relationships between ratings, installs, and monetization types.
-3. Assess how pricing strategy affects popularity.
-4. Plan data cleaning and exploratory analysis steps.
-5. Define the methodology for descriptive and predictive modeling.
+1. Perform comprehensive EDA with advanced and novel visualizations.
+2. Generate 10–12 deep insights aligned with research questions.
+3. Prepare clean, transformed, engineered datasets for modeling.
+4. Begin validating hypotheses through early descriptive patterns.
+5. Set up the modeling pipeline for Phase 3 (baseline + advanced models).
 
 ---
 
@@ -45,13 +45,14 @@ It supports data-mining tasks such as correlation analysis, classification, and 
 
 ## 5. Methodology Overview
 
-The project follows three phases:
+| Stage                           | Description                                                   |
+| ------------------------------- | ------------------------------------------------------------- |
+| **Data Cleaning & Preparation** | Missing values, duplicates, outliers, scaling, encoding       |
+| **Exploratory Data Analysis**   | Category trends, rating–install relationships, pricing impact |
+| **Novel Visualizations**        | Ridge plots, sunburst charts, treemaps, PCA maps, clusters    |
+| **Descriptive Analysis**        | Insights mapped to research questions & hypotheses            |
+| **Feature Engineering**         | New variables for modeling (Phase 3 preparation)              |
 
-| Phase | Focus                          | Description                                                             |
-| ----- | ------------------------------ | ----------------------------------------------------------------------- |
-| **1** | Planning & Documentation       | Problem definition, dataset study, hypotheses, and methodology planning |
-| **2** | Data Exploration               | Data cleaning, exploratory analysis.                                    |
-| **3** | Predictive Modeling & Insights | Building and evaluating models, generating insights                     |
 
 ---
 
@@ -93,25 +94,27 @@ Detailed phase-wise task allocations and individual responsibilities are documen
 smartphone-app-trends/
 │
 ├── data/
-│   ├── raw/
-│   │   └── googleplaystore.csv
-│   └── processed/
-│       └── cleaned_sample.csv
+│   ├── raw/googleplaystore.csv
+│   └── processed/cleaned_data_phase2.csv
 │
 ├── docs/
-│   ├── work_division_plan.docx
+│   ├── literature_review_summary.docx
 │   ├── research_objectives.docx
 │   ├── hypotheses_and_innovation.docx
-│   ├── dataset_description_and_rationale.docx
-│   ├── literature_review_summary.docx
-│   ├── data_preprocessing_plan.docx
-│   └── methodology_plan.docx
+│   ├── methodology_plan.docx
+│   ├── feature_engineering_strategy.docx
+│   └── phase2_methodology_updated.docx
 │
 ├── notebooks/
-│   └── data_exploration.ipynb
+│   ├── eda_app_domain_vikas.ipynb
+│   ├── eda_user_domain_meenaksh.ipynb
+│   ├── eda_smartphone_domain_abhishek.ipynb
+│   ├── clustering_and_pca.ipynb
+│   └── shap_preparation.ipynb
 │
 ├── reports/
-│   └── phase1_report_compiled.pdf
+│   ├── phase1_report_compiled.pdf
+│   └── phase2_insights_report.pdf
 │
 └── README.md
 ```
@@ -129,19 +132,21 @@ smartphone-app-trends/
 
 ## 10. Phase 1 Deliverables
 
-- README.md
-- Work Division Plan
-- Research Objectives
-- Hypotheses and Innovation
-- Dataset Description and Rationale
-- Literature Review Summary
-- Data Preprocessing Plan
-- Methodology Plan
-- Compiled Phase 1 Report (PDF)
+- Three EDA Notebooks: App / User / Smartphone domains
+- Feature Engineering Document
+- Updated Research Methodology (Phase 2)
+- 10–12 insight summaries mapped to research questions
+- Clustering and PCA notebook
+- Phase 2 Insights PDF Report
+- Team Contribution Log
 
 ---
 
 ## 11. Conclusion
 
-Phase 1 defines the problem, sets objectives, and establishes a clear understanding of the dataset.  
-The structured plan developed here will guide subsequent phases of exploration, analysis, and modeling to uncover meaningful insights into app usage and trends.
+Phase 2 shifts the project from planning to real analytical work, producing:
+- High-quality EDA
+- Preliminary evidence for hypotheses
+- Deep domain insights
+- Clean and engineered data for predictive modeling
+This phase sets the foundation for Phase 3, where advanced ML models, SHAP explainability, and hypothesis testing will be executed.
