@@ -15,49 +15,58 @@ The questions are categorized into **four primary domains** — *App Domain*, *U
 
 ---
 
-## **A. App Domain:**
+## **A. App Domain**
 
-### **1. App Evolution & Market Dynamics:**
+### **1. App Evolution & Market Dynamics**
 How do globalization and localization trends influence the evolution, adoption, and decline of mobile applications across regions?
 
-### **2. Context-Aware App Modeling:**
+### **2. Context-Aware App Modeling**
 How can contextual features like location, time, and motion be effectively integrated into app usage models to improve accuracy in predicting user behavior?
 
-### **3. Heterogeneous Data Fusion:**
+### **3. Heterogeneous Data Fusion**
 What are the most effective approaches for fusing heterogeneous app usage data — such as sensor logs, app metadata, and user context — to improve predictive modeling?
+
+### **4. Market Competition Signals & User Expectations**
+How do frequent updates, the number of new reviews, and changing rankings in top categories help us understand what users expect and how top apps compete over time?
+
+### **5. Feature-Rich vs. Lightweight Apps: Trade-offs & Retention**
+How do feature-rich apps (large size, multiple permissions, many functionalities) compare to lightweight apps in terms of user satisfaction, update frequency, and long-term retention across different categories?
 
 ---
 
 ## **B. User Domain:**
 
-### **1. Linking Physical Activities and App Usage:**
+### **1. Linking Physical Activities and App Usage**
 What patterns exist between users’ physical-world activities and their smartphone app interactions, and how can these be leveraged for smart recommendations?
 
-### **2. User Profiling & Behavior Prediction:**
+### **2. User Profiling & Behavior Prediction**
 How accurately can app usage behavior reveal user demographic, psychological, and lifestyle traits, and what are the ethical implications of this profiling?
 
-### **3. Deep Reasoning & Explainable AI:**
+### **3. Deep Reasoning & Explainable AI**
 How can deep learning explainer models make app usage predictions more interpretable and trustworthy for both users and developers?
 
 ---
 
-## **C. Smartphone Domain:**
+## **C. Smartphone Domain**
 
-### **1. Energy Efficiency Optimization:**
+### **1. Energy Efficiency Optimization**
 How can app scheduling algorithms and API usage be optimized to minimize energy drain while maintaining user experience quality?
 
-### **2. Urban Computing via App Usage:**
+### **2. Urban Computing via App Usage**
 How can large-scale app usage and mobility data be leveraged to uncover urban dynamics and improve smart city planning?
 
 ---
 
-## **D. Cross-Domain (Ethics & Privacy):**
+## **D. Cross-Domain (Ethics & Privacy)**
 
-### **1. Ethical AI and Data Governance:**
+### **1. Ethical AI and Data Governance**
 What frameworks can ensure ethical data collection and anonymization while maintaining analytical value for large-scale app usage studies?
 
-### **2. Data Privacy & Federated Learning:**
+### **2. Data Privacy & Federated Learning**
 Can federated learning frameworks ensure privacy-preserving app usage analysis without compromising accuracy and scalability?
+
+### **3. Security Expectations and Trust Collapse in Sensitive Apps**
+Users have extremely high expectations for security, especially in financial apps. How severely and rapidly do privacy breaches or vulnerability incidents reduce trust and usage, and what does this tell us about the non-negotiable role of security in user retention?
 
 ---
 
