@@ -49,8 +49,7 @@ It supports data-mining tasks such as correlation analysis, classification, and 
 ## 5. Exploratory Research Analysis for EDA
 
 1) How do frequent updates, the number of new reviews, and changing rankings in top categories help us understand what users expect and how top apps compete over time.
-2) Users have high expectations for security, especially in financial apps. Any privacy or vulnerability issue reduces trust and usage.
-3) How do feature-rich apps (large size, multiple permissions, many functionalities) compare to lightweight apps in terms of user satisfaction, update frequency, and long-term retention across different categories?
+2) How do feature-rich apps (large size, multiple permissions, many functionalities) compare to lightweight apps in terms of user satisfaction, update frequency, and long-term retention across different categories?
 
 ---
 
