@@ -1,91 +1,106 @@
 # **Project Hypotheses: Smartphone App Usage Analysis**
 
 This document outlines the **testable hypotheses** derived from the IEEE paper  
-[*Smartphone App Usage Analysis: Datasets, Methods, and Applications*](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9745583)  
+[_Smartphone App Usage Analysis: Datasets, Methods, and Applications_](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9745583)  
 and the project’s four-domain research framework.  
 Each hypothesis includes its **null hypothesis (H₀)** and **alternative hypothesis (H₁)**.
 
 ---
 
-## **A. App Domain Hypotheses**
-
-### **1. App Evolution & Market Dynamics**
-- **H₁:** Globalization and localization trends significantly influence app adoption rates and longevity across regions.
-- **H₀:** App adoption and longevity are independent of globalization or localization factors.  
-  > *Derived from Li et al. (2022, Sec. VI-C): “App evolution globalization vs. localization has a critical role in the app ecosystem’s development and popularity diffusion.”*
+# **A. App Domain Hypotheses**
 
 ---
 
-### **2. Context-Aware App Modeling**
-- **H₁:** Incorporating contextual variables (e.g., time, location, motion status) into app usage models improves prediction accuracy compared to non-contextual models.  
-- **H₀:** Contextual variables do not significantly improve predictive accuracy in app usage models.  
-  > *Supported by research such as App2Vec, DeepApp, and Context-Aware Collaborative Filtering discussed in the IEEE paper.*
+## **1. Impact of App Attributes on Ratings and Installs**
+
+**RQ:** How do app characteristics influence ratings and installs?
+
+- **H₁:** App attributes (category, size, price, content rating, permission count) have significant predictive effects on user ratings and install counts across app genres.
+- **H₀:** App attributes have no significant predictive effect on ratings or install counts.
 
 ---
 
-### **3. Heterogeneous Data Fusion**
-- **H₁:** Fusion of heterogeneous data sources (sensor data, app metadata, network logs) yields more robust and generalizable app usage predictions.  
-- **H₀:** Integrating heterogeneous data sources does not lead to significant improvement in model robustness or performance.  
-  > *Referenced from IEEE (2022, Sec. VI-B): “Current methods for fusing heterogeneous data can be improved in effectiveness and generalizability.”*
+## **2. Feature-Rich vs. Lightweight Apps: Trade-offs & Retention**
+
+**RQ:** How do heavy vs. lightweight apps differ in user experience and retention?
+
+- **H₁:** Feature-rich apps exhibit significantly different retention rates, update frequencies, and user satisfaction scores compared to lightweight apps.
+- **H₀:** There is no significant difference in retention, update frequency, or satisfaction between feature-rich and lightweight apps.
 
 ---
 
-## **B. User Domain Hypotheses**
-
-### **1. Linking Physical Activities & App Usage**
-- **H₁:** Spatiotemporal app usage traces can accurately infer users’ physical-world activities.  
-- **H₀:** There is no significant relationship between app usage traces and physical activities.  
-  > *Based on Li et al. (2022, Sec. VI-6): “Spatiotemporal factors must be introduced to infer users’ physical activities better.”*
+# **B. User Domain Hypotheses**
 
 ---
 
-### **2. User Profiling & Behavior Prediction**
-- **H₁:** App usage behaviors can predict user demographic, psychological, and lifestyle traits with measurable accuracy.  
-- **H₀:** App usage behaviors cannot accurately predict demographic or psychological attributes.  
-  > *Drawn from Li et al. (2022, Table VIII–XI): studies demonstrated predictive profiling accuracy for gender, age, and personality using Random Forest and SVM models.*
+## **1. Linking Physical Activities & App Usage**
+
+**RQ:** Can app usage patterns reflect users’ real-world activities?
+
+- **H₁:** Spatiotemporal app usage patterns significantly correlate with users’ physical-world activities and can be used to infer these activities with measurable accuracy.
+- **H₀:** App usage patterns show no significant correlation with physical activities and cannot infer them accurately.
 
 ---
 
-### **3. Explainable AI in App Behavior Analysis**
-- **H₁:** Incorporating deep learning explainer models (e.g., SHAP, LIME, GNNExplainer) improves interpretability and trust in app usage predictions without significant loss in accuracy.  
-- **H₀:** Explainable AI models do not enhance interpretability or user trust in predictions.  
-  > *Referenced from IEEE (2022, Sec. VI-3): “Integrating deep learning explainer models will improve interpretability and stakeholder reliability.”*
+## **2. User Profiling & Behavior Prediction**
+
+**RQ:** Can app usage predict user traits?
+
+- **H₁:** App usage behavior significantly predicts demographic, psychological, and lifestyle attributes with accuracy above random baselines.
+- **H₀:** App usage behavior does not predict user demographics or psychological attributes better than random baselines.
 
 ---
 
-## **C. Smartphone Domain Hypotheses**
-
-### **1. Energy Efficiency Optimization**
-- **H₁:** Optimized app scheduling and API usage can significantly reduce energy consumption without degrading user experience quality.  
-- **H₀:** Optimized scheduling does not significantly reduce energy consumption or maintain user experience.  
-  > *As supported by Li et al. (2022, Sec. V-C): “Unnecessary workload and background APIs are primary causes of excessive power consumption.”*
+# **C. Smartphone Domain Hypotheses**
 
 ---
 
-### **2. Urban Computing via App Usage**
-- **H₁:** Large-scale app usage and mobility data can reveal patterns in urban behavior useful for smart city planning.  
-- **H₀:** App usage and mobility data do not provide significant insights into urban dynamics.  
-  > *Based on IEEE (2022, Sec. VI-5): “App-location relationships can uncover urban dynamics and identify functional zones.”*
+## **1. Energy Efficiency Optimization**
+
+**RQ:** Can app scheduling reduce energy drain?
+
+- **H₁:** Optimized app scheduling and API utilization significantly reduce smartphone energy consumption without degrading user-perceived performance.
+- **H₀:** Optimized scheduling does not significantly reduce energy consumption or harms performance.
 
 ---
 
-## **D. Cross-Domain (Ethics & Privacy) Hypotheses**
+## **2. Urban Computing via App Usage**
 
-### **1. Ethical AI & Data Governance**
-- **H₁:** Implementation of transparent data governance frameworks increases user trust and compliance with app usage data collection.  
-- **H₀:** Ethical frameworks have no significant effect on user trust or data compliance.  
-  > *Referenced from IEEE (2022, Sec. III & GDPR Discussion): “End-user transparency and data-for-good principles are essential for trust and compliance.”*
+**RQ:** Can app usage reveal urban patterns?
+
+- **H₁:** Large-scale app and mobility data significantly reveal urban activity patterns, functional zones, and temporal dynamics useful for smart city planning.
+- **H₀:** App and mobility data do not reveal significant urban activity patterns.
 
 ---
 
-### **2. Data Privacy & Federated Learning**
-- **H₁:** Federated learning provides privacy-preserving app usage analysis with minimal trade-offs in model accuracy.  
-- **H₀:** Federated learning significantly reduces model performance compared to centralized approaches.  
-  > *Supported by IEEE (2022, Sec. X): “Federated Learning allows privacy-preserving modeling without centralized data processing.”*
+# **D. Cross-Domain (Ethics & Privacy) Hypotheses**
+
+---
+
+## **1. Ethical AI & Data Governance**
+
+**RQ:** Do ethical frameworks increase trust?
+
+- **H₁:** Transparent data governance frameworks significantly increase user trust and willingness to participate in app usage data collection.
+- **H₀:** Data governance frameworks have no significant effect on user trust or willingness to provide data.
+
+---
+
+## **2. Data Privacy & Federated Learning**
+
+**RQ:** Does federated learning preserve privacy without performance loss?
+
+- **H₁:** Federated learning enables privacy-preserving app usage modeling with no significant decrease in predictive accuracy compared to centralized learning.
+- **H₀:** Federated learning significantly reduces predictive accuracy relative to centralized methods.
+
+---
+
+**Summary**
+These hypotheses translate the research questions into testable statements across four domains—apps, users, smartphones, and privacy. They collectively examine how app attributes shape user behavior, how usage patterns reveal personal or urban insights, how optimization affects energy efficiency, and how ethical frameworks and federated learning support privacy-preserving analytics.
 
 ---
 
 **Reference:**  
 Li, T., Xia, T., Wang, H., Tu, Z., Tarkoma, S., Han, Z., & Hui, P. (2022).  
-*Smartphone App Usage Analysis: Datasets, Methods, and Applications.*  
+_Smartphone App Usage Analysis: Datasets, Methods, and Applications._  
 IEEE Communications Surveys & Tutorials, 24(2), 937–964. DOI: 10.1109/COMST.2022.3163176
