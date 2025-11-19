@@ -65,9 +65,6 @@ What frameworks can ensure ethical data collection and anonymization while maint
 ### **2. Data Privacy & Federated Learning**
 Can federated learning frameworks ensure privacy-preserving app usage analysis without compromising accuracy and scalability?
 
-### **3. Security Expectations and Trust Collapse in Sensitive Apps**
-Users have extremely high expectations for security, especially in financial apps. How severely and rapidly do privacy breaches or vulnerability incidents reduce trust and usage, and what does this tell us about the non-negotiable role of security in user retention?
-
 ---
 
 ## **Summary**
