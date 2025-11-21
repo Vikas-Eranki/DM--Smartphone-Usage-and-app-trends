@@ -58,7 +58,7 @@ The study uses supervised machine learning to predict two outcomes:
   - Price  
   - Size  
   - Last Updated Year  
-  - One-hot encoded categorical values  
+  - Label encoded categorical values  
 
 ---
 
