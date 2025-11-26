@@ -1,6 +1,6 @@
 # Smartphone Usage and App Trends
 
-**Data Mining Project – Phase 2**
+**Data Mining Project – Phase 3**
 
 ---
 
@@ -10,29 +10,28 @@ Smartphones have transformed how people communicate, access services, and consum
 
 This project analyzes Google Play Store data to identify patterns in app performance, including the impact of categories, ratings, installs, and pricing models. Using data-mining techniques, it explores the factors that shape user engagement and app success.
 
-Phase 2 performs an exemplary Exploratory Data Analysis (EDA) to uncover patterns related to app updates, user expectations, performance, security concerns, and category dynamics. Insights obtained here form the analytical foundation for the predictive and descriptive models in Phase 3.
+Phase 3 is the final execution phase of the project.While Phase 2 focused on EDA, insights, and model preparation, Phase 3 converts all analytical work into professional visualisations, dashboards, presentations, and final evaluation deliverables..
 
 ---
 
 ## 2. Problem Definition
 
-- Whether frequent updates maintain relevance and trust
-- How reviews, ratings, and installs evolve with user expectations
+- A refined narrative of findings from Phases 1 & 2
+- Clear visual proof (graphs + dashboards)
 - How performance issues impact long-term retention
-- How feature-rich vs lightweight apps differ in satisfaction
-- Why security concerns, especially in finance apps, lead to drop-offs
-- How apps compete across categories over time
+- Model results explained with charts + interpretation
+- Simple and professional communication to evaluators
+
 
 ---
 
 ## 3. Objectives
 
-1. Perform comprehensive EDA with advanced and novel visualizations.
-2. Generate 10–12 deep insights aligned with research questions.
-3. Prepare clean, transformed, engineered datasets for modeling.
-4. Begin validating hypotheses through early descriptive patterns.
-5. Set up the modeling pipeline for Phase 3 (baseline + advanced models).
-6. Clustering, dimensionality reduction, and preparatory modeling steps
+1. Build a high-impact PPT covering EDA, Methodology, Predictive Analysis, Findings, Conclusion.
+2. Create professional static visualizations (matplotlib / seaborn).
+3. Create at least 1 interactive visualization (Streamlit / Plotly).
+4. Ensure clean GitHub commits, documentation uploads, and contribution logs.
+5. Write the Phase 3 Final Report summarizing results and model interpretations.
 
 ---
 
@@ -55,24 +54,25 @@ It supports data-mining tasks such as correlation analysis, classification, and 
 
 ## 6. Methodology Overview
 
-| Stage                           | Description                                                   |
-| ------------------------------- | ------------------------------------------------------------- |
-| **Data Cleaning & Preparation** | Missing values, duplicates, outliers, scaling, encoding       |
-| **Exploratory Data Analysis**   | Category trends, rating–install relationships, pricing impact |
-| **Novel Visualizations**        | Ridge plots, sunburst charts, treemaps, PCA maps, clusters    |
-| **Descriptive Analysis**        | Insights mapped to research questions & hypotheses            |
-| **Feature Engineering**         | New variables for modeling (Phase 3 preparation)              |
+| Stage                                   | Description                                                        |
+| --------------------------------------- | ------------------------------------------------------------------ |
+| **1. Visualisation Curation**           | Selecting best EDA charts + model charts, redesigning them cleanly |
+| **2. Interactive Dashboards**           | Streamlit / Plotly Dash for exploring app trends                   |
+| **3. Predictive Results Visualization** | Feature importance, confusion matrix, regression prediction charts |
+| **4. Storyboarding PPT**                | Structuring narrative flow for presentation                        |
+| **5. Final Video**                      | Clear, confident explanation of methodology + findings             |
 
 
 ---
 
 ## 7. Team and Leadership
 
-| Name         | Lead         | Primary Focus                                              |
-| ------------ | ------------ | ---------------------------------------------------------- |
-| **Vikas**    | Phase 1 Lead | Methodology, preprocessing plan, documentation integration |
-| **Meenaksh** | Phase 2 Lead | Research objectives, hypotheses, literature review         |
-| **Abhishek** | Phase 3 Lead | Dataset rationale, data description, final review          |
+| Name               | Phase Lead         | Responsibilities                                                     |
+| ------------------ | ------------------ | -------------------------------------------------------------------- |
+| **Vikas**          | Phase 1 Lead       | Review visuals, verify accuracy, help with model explanations        |
+| **Meenaksh**       | Phase 2 Lead       | Research alignment, hypothesis linkage, PPT documentation            |
+| **Abhishek Meena** | Phase 3 Lead       | Final PPT, dashboard, model visuals, presentation video coordination |
+
 
 **Leadership Rotation:**
 
@@ -141,13 +141,17 @@ smartphone-app-trends/
 
 ---
 
-## 11. Phase 2 Deliverables
+## 11. Phase 3 Deliverables
 
-| Category                              | Deliverables                                                                                                                                                                                                                                                                                      |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Exploratory Data Analysis (EDA)**   | • EDA notebooks based on research questions and hypothesis<br>• Visualizations including novel charts (treemap, PCA, clusters)<br>• Cleaned & transformed dataset for analysis<br>• Insight summary (10–12 insights) aligned with the 3 final research questions                |
-| **Research Methodology**              | • Updated Phase-2 methodology document (approach, justification, techniques)<br>• Feature engineering strategy (variables for modeling)<br>• Preliminary linkage of EDA findings to research questions and hypotheses                                                                             |
-| **Predictive & Descriptive Analysis** | • Baseline modeling preparation notebooks (variable checks, preprocessing outputs)<br>• PCA & clustering analysis for descriptive insights<br>• Pre-modeling plots: correlations, feature distributions, clusters<br>• Model-readiness datasets and preprocessing pipeline (for Phase 3 modeling) |
+| Component                    | Deliverables                                                                  |
+| ---------------------------- | ----------------------------------------------------------------------------- |
+| **PPT (Final Presentation)** | Full 10–12 slide deck with visuals, methods, insights, models, and conclusion |
+| **Visualisations**           | 8–12 static visuals + 1 interactive dashboard                                 |
+| **Video Presentation**       | 8–10 min team video, each member visible and speaking                         |
+| **GitHub Contributions**     | Commit history, PPT, dashboards, reports                                      |
+| **Final Report PDF**         | Phase 3 summary with visuals and interpretations                              |
+| **Dashboard**                | Streamlit app showcasing installs, category trends, rating maps               |
+
 
 
 ---
