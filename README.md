@@ -158,8 +158,8 @@ smartphone-app-trends/
 
 ## 12. Conclusion
 
-- High-quality EDA
-- Preliminary evidence for hypotheses
-- Deep domain insights using visualizations
-- Clean and engineered data for predictive modeling  
-This phase sets the foundation for Phase 3, where advanced ML models, SHAP explainability, and hypothesis testing will be executed.
+- Interactive dashboard creation
+- Strong interpretation of predictive results
+- Clean GitHub collaboration
+- Clear, structured, and high-quality presentation 
+This phase communicates the entire project to evaluators with clarity, confidence, and visual impact.
