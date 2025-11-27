@@ -45,10 +45,9 @@ It supports data-mining tasks such as correlation analysis, classification, and 
 
 ---
 
-## 5. Exploratory Research Analysis for EDA
+## 5. Visualisation Dynamics (Interactive)
 
-1) How do frequent updates, the number of new reviews, and changing rankings in top categories help us understand what users expect and how top apps compete over time.
-2) How do feature-rich apps (large size, multiple permissions, many functionalities) compare to lightweight apps in terms of user satisfaction, update frequency, and long-term retention across different categories?
+Phase 3 focuses on delivering high-quality visual storytelling using both static and interactive visuals. All EDA charts (bar charts, scatter plots, box plots, and heatmaps) will be redesigned cleanly with proper labels and high-contrast themes to ensure clarity in the final PPT. Predictive model visuals such as confusion matrices, feature-importance charts, and actual vs predicted regression plots will also be included. Along with these static visuals, we will build one interactive dashboard using Streamlit/Plotly, allowing category filtering, rating–install exploration, and dynamic trend viewing. This combination of clear static charts + an interactive dashboard helps us meet the Phase-3 requirement of delivering professional, engaging, and data-driven visual insights.
 
 ---
 
