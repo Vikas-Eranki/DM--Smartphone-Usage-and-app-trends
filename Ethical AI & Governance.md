@@ -114,7 +114,7 @@ This method is useful for apps that want privacy + learning at the same time.
 
 ---
 
-## 8. Summary (Easy Version)
+## 8. Summary 
 Our project is fully safe and ethical because:
 - We use only public, anonymized data  
 - We avoid all personal information  
