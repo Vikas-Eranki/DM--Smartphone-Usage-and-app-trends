@@ -43,7 +43,7 @@ Source: [Google Play Store Apps Dataset – Kaggle](https://www.kaggle.com/datas
 3. **Smartphone Usage Dataset**
 This dataset captures real-world smartphone usage patterns such as total app usage, screen time, location, daily usage behavior, and gaming app usage.
 It was externally sourced to support the third research domain, enabling both descriptive and predictive modeling of smartphone behavior, energy patterns, and user activity insights.
-Source: [Smartphone Usage Dataset – Kaggle](https://www.kaggle.com/datasets/prince7489/smartphone-usage-dataset)
+Source: [Smartphone Usage Dataset – Kaggle](https://www.kaggle.com/datasets/bhadramohit/smartphone-usage-and-behavioral-dataset?utm_source=chatgpt.com)
 
 ---
 
