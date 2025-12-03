@@ -22,7 +22,7 @@ from sklearn.cluster import KMeans
 # --------------------------- #
 
 def run():
-    st.title("📱 Smartphone Usage Efficiency — Predictive Analysis Dashboard")
+    st.title(" Smartphone Usage Efficiency — Predictive Analysis Dashboard")
     st.write("""
     This dashboard answers the key question:
 
@@ -54,7 +54,7 @@ def run():
     # ----------------------------------------------------
     # Feature Distributions
     # ----------------------------------------------------
-    st.subheader("📊 Feature Distributions")
+    st.subheader(" Feature Distributions")
 
     fig, ax = plt.subplots(2, 2, figsize=(12, 8))
     df["Daily_Screen_Time_Hours"].hist(ax=ax[0,0])
@@ -74,7 +74,7 @@ def run():
     # ----------------------------------------------------
     # Efficiency Score
     # ----------------------------------------------------
-    st.subheader("⚡ Efficiency Score Calculation")
+    st.subheader(" Efficiency Score Calculation")
 
     df["efficiency_score"] = (
         df["Productivity_App_Usage_Hours"] /
@@ -102,7 +102,7 @@ def run():
     # ----------------------------------------------------
     # Correlation Heatmap
     # ----------------------------------------------------
-    st.subheader("🔥 Correlation Heatmap")
+    st.subheader(" Correlation Heatmap")
 
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.heatmap(df.corr(numeric_only=True), annot=True, cmap="coolwarm")
@@ -208,7 +208,7 @@ def run():
     st.pyplot(fig)
 
     # PCA clusters
-    st.subheader("🌀 PCA 2D Visualization")
+    st.subheader(" PCA 2D Visualization")
 
     pca = PCA(n_components=2)
     pca_data = pca.fit_transform(scaled)
@@ -226,7 +226,7 @@ def run():
     # ----------------------------------------------------
     # Conclusion
     # ----------------------------------------------------
-    st.subheader("📌 Final Insights")
+    st.subheader(" Final Insights")
     st.write("""
     ### ✔ What defines an *efficient* smartphone user?
 

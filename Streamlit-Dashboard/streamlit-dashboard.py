@@ -21,7 +21,7 @@ from sklearn.metrics import (
 # ------------------------------------------
 st.set_page_config(
     page_title="Google Play Store Analytics",
-    page_icon="📱",
+    page_icon="",
     layout="wide"
 )
 
@@ -170,7 +170,7 @@ if page == "Dashboard Overview":
 # ------------------------------------------
 elif page == "Category Analysis":
 
-    st.title("📂 Category Analysis")
+    st.title(" Category Analysis")
 
     categories = ["All"] + sorted(df["Category"].unique())
     selected = st.selectbox("Select Category", categories)
@@ -368,7 +368,7 @@ elif page == "ML Models":
 # ------------------------------------------
 elif page == "Data Explorer":
 
-    st.title("📘 Data Explorer")
+    st.title(" Data Explorer")
 
     col1, col2, col3 = st.columns(3)
     col1.metric("Total Rows", f"{len(df):,}")

@@ -21,7 +21,7 @@ def load_dataset():
     return None
 
 def run():
-    st.title("📂 Category Analysis")
+    st.title(" Category Analysis")
 
     df = load_dataset()
     if df is None:

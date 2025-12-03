@@ -20,7 +20,7 @@ def load_dataset():
     return None
 
 def run():
-    st.title("📘 Data Explorer")
+    st.title(" Data Explorer")
 
     df = load_dataset()
     if df is None:

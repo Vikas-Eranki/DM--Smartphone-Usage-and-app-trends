@@ -27,7 +27,7 @@ def load_dataset():
     return None
 
 def run():
-    st.title("📊 Overview / Snapshot")
+    st.title(" Overview / Snapshot")
 
     df = load_dataset()
     if df is None:
