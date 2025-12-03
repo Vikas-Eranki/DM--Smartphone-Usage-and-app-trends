@@ -25,10 +25,6 @@ How do app characteristics (such as category, size, price, and content rating) i
 
 How do feature-rich apps (large size, multiple permissions, many functionalities) compare to lightweight apps in terms of user satisfaction, update frequency, and long-term retention across different categories?
 
-### **3. User Review Modeling & Sentiment Insights**
-
-How effectively can we categorize user reviews into common feedback themes, enabling structured insight extraction from unstructured textual data?
-
 ## **B. Smartphone and User Efficiency Domain**
 
 ### **1. Behavioral Modeling of Smartphone Efficiency**
