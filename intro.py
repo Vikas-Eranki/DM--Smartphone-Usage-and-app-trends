@@ -39,10 +39,10 @@ st.title("📱 Dashboard Launcher (robust)")
 # --- Update filenames below EXACTLY as they appear in your folder (include .py) ---
 PAGES = {
     "Project Overview": "dashboard_1_project_overview.py",
-    "Category Analysis": "dashboard_2_category_analysis.py",
-    "User Behaviour": "dashboard_3_user_behaviour.py",
-    "Modeling": "dashboard_4_modeling.py",
-    "Data Explorer": "dashboard_5_data_explorer.py"
+    "App Domain": "dashboard_2_app_domain.py",
+    "User Domain and Trends": "dashboard_3_user_domain_and_trends.py",
+    "Overall Modeling Overview": "dashboard_4_overall_modeling_overview.py",
+    "Smartphone Usage Efficiency": "dashboard_5_smartphone_efficiency.py"
 }
 
 BASE_DIR = Path(__file__).resolve().parent
