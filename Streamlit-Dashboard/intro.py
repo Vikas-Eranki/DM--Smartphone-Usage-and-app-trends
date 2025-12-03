@@ -1,22 +1,15 @@
-# intro.py — premium UI launcher (robust import system)
 
 import streamlit as st
 from importlib import util
 from pathlib import Path
 import traceback
 
-# ------------------------------------------------------
-# Page Config
-# ------------------------------------------------------
 st.set_page_config(
     page_title="Dashboard Launcher",
     layout="wide",
     page_icon=""
 )
 
-# ------------------------------------------------------
-# Premium UI CSS
-# ------------------------------------------------------
 st.markdown("""
 <style>
     .sidebar-selectbox div[data-baseweb="select"] {
@@ -121,9 +114,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ------------------------------------------------------
-# Premium Header
-# ------------------------------------------------------
 st.markdown("""
 <div class="dashboard-header">
     <h1> Dashboard Launcher</h1>
@@ -131,9 +121,6 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ------------------------------------------------------
-# Dashboard File Mapping
-# ------------------------------------------------------
 PAGES = {
     "Project Overview": "dashboard_1_project_overview.py",
     "App Domain": "dashboard_2_app_domain.py",
@@ -152,15 +139,11 @@ def import_from_path(name: str, path: Path):
     spec.loader.exec_module(module)
     return module
 
-# ------------------------------------------------------
-# Sidebar UI
-# ------------------------------------------------------
 with st.sidebar:
 
 
     st.markdown("### Select Dashboard")
 
-    # Apply a custom class to the selectbox container
     select_container = st.container()
     with select_container:
         select_container.markdown(
@@ -175,9 +158,6 @@ with st.sidebar:
     st.markdown("**Last Updated:** Dec 2025")
 
 
-# ------------------------------------------------------
-# Selected Dashboard Info Card
-# ------------------------------------------------------
 filename = PAGES[choice]
 
 st.markdown(f"""
@@ -190,11 +170,8 @@ st.markdown(f"""
 
 module_path = BASE_DIR / filename
 
-# ------------------------------------------------------
-# Load / Run Dashboard
-# ------------------------------------------------------
 if not module_path.exists():
-    st.error(f"❌ Dashboard file not found: `{module_path}`")
+    st.error(f" Dashboard file not found: `{module_path}`")
     st.info("Make sure the filename in PAGES matches exactly (case-sensitive).")
 
 else:
@@ -205,8 +182,8 @@ else:
         if hasattr(module, "run") and callable(module.run):
             module.run()
         else:
-            st.warning(f"⚠️ Module '{filename}' does not define a run() function.")
+            st.warning(f" Module '{filename}' does not define a run() function.")
             st.info("Wrap your dashboard code in a def run(): function.")
     except Exception:
-        st.error("❌ Error importing or executing the dashboard module.")
+        st.error(" Error importing or executing the dashboard module.")
         st.text(traceback.format_exc())

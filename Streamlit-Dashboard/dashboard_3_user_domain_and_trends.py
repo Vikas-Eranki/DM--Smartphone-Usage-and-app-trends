@@ -1,4 +1,3 @@
-# ml_models.py
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -34,7 +33,6 @@ def run():
         st.error("No dataset found. Place data/clean_apps.csv or configure kagglehub.")
         st.stop()
 
-    # prepare numeric dataframe
     num = df.select_dtypes(include=[np.number]).copy()
     if num.empty:
         st.error("No numeric features available. Ensure preprocessing created numeric columns.")

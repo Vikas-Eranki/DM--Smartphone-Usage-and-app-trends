@@ -1,21 +1,15 @@
-# overview.py
 import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
 import os
 
-# -------------------------
-# Data loader helper (shared)
-# -------------------------
 @st.cache_data
 def load_dataset():
-    # prefer local cleaned CSV
     LOCAL = "/Users/meenakshsinghania04/Desktop/DM--Smartphone-Usage-and-app-trends/data/processed/googleplaystore_cleaned.csv"
     if os.path.exists(LOCAL):
         df = pd.read_csv(LOCAL)
         return df
-    # fallback: try kagglehub (if installed & configured)
     try:
         import kagglehub
         path = kagglehub.dataset_download("vikaseranki9/google-play-store-cleaned")
@@ -34,7 +28,6 @@ def run():
         st.error("No dataset found. Put cleaned CSV at data/clean_apps.csv or install/configure kagglehub.")
         st.stop()
 
-    # Quick cleanup and ensure numeric
     for c in ["Installs", "Reviews", "Rating", "Price", "Size"]:
         if c in df.columns:
             df[c] = pd.to_numeric(df[c], errors="coerce")

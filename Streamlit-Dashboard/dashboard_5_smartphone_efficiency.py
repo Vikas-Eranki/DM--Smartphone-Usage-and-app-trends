@@ -17,9 +17,6 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import accuracy_score
 from sklearn.cluster import KMeans
 
-# --------------------------- #
-# STREAMLIT DASHBOARD RUNNER  #
-# --------------------------- #
 
 def run():
     st.title(" Smartphone Usage Efficiency — Predictive Analysis Dashboard")
@@ -30,9 +27,6 @@ def run():
     Can we model efficient vs inefficient users?**
     """)
 
-    # ----------------------------------------------------
-    # Load Data
-    # ----------------------------------------------------
     @st.cache_data
     def load_data():
         path = kagglehub.dataset_download("vikaseranki9/mobile-usage-behavioral-analysis-dataset")
@@ -51,9 +45,6 @@ def run():
     st.dataframe(df.head())
     st.write("Shape:", df.shape)
 
-    # ----------------------------------------------------
-    # Feature Distributions
-    # ----------------------------------------------------
     st.subheader(" Feature Distributions")
 
     fig, ax = plt.subplots(2, 2, figsize=(12, 8))
@@ -71,9 +62,7 @@ def run():
 
     st.pyplot(fig)
 
-    # ----------------------------------------------------
-    # Efficiency Score
-    # ----------------------------------------------------
+   
     st.subheader(" Efficiency Score Calculation")
 
     df["efficiency_score"] = (
@@ -99,18 +88,12 @@ def run():
     df2 = df[df["label"] != 2].copy()
     df2["y"] = df2["label"]
 
-    # ----------------------------------------------------
-    # Correlation Heatmap
-    # ----------------------------------------------------
     st.subheader(" Correlation Heatmap")
 
     fig, ax = plt.subplots(figsize=(10, 6))
     sns.heatmap(df.corr(numeric_only=True), annot=True, cmap="coolwarm")
     st.pyplot(fig)
 
-    # ----------------------------------------------------
-    # Model Training
-    # ----------------------------------------------------
     st.subheader("🤖 Model Training & Accuracy Comparison")
 
     features = [
@@ -170,16 +153,12 @@ def run():
 
     st.write(results)
 
-    # Accuracy bar chart
     fig, ax = plt.subplots(figsize=(7, 5))
     plt.bar(results.keys(), results.values())
     plt.ylabel("Accuracy")
     plt.title("Model Comparison")
     st.pyplot(fig)
 
-    # ----------------------------------------------------
-    # KMeans Clustering
-    # ----------------------------------------------------
     st.subheader("🔍 Behavioral Clustering (KMeans)")
 
     cluster_features = [
@@ -199,7 +178,6 @@ def run():
     st.write("Cluster behavior summary:")
     st.dataframe(df.groupby("cluster")[cluster_features].mean())
 
-    # Cluster centers chart
     centers = pd.DataFrame(kmeans.cluster_centers_, columns=cluster_features)
 
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -207,7 +185,6 @@ def run():
     plt.title("Cluster Patterns")
     st.pyplot(fig)
 
-    # PCA clusters
     st.subheader(" PCA 2D Visualization")
 
     pca = PCA(n_components=2)
@@ -223,9 +200,7 @@ def run():
     plt.title("PCA Cluster Plot")
     st.pyplot(fig)
 
-    # ----------------------------------------------------
-    # Conclusion
-    # ----------------------------------------------------
+
     st.subheader(" Final Insights")
     st.write("""
     ### ✔ What defines an *efficient* smartphone user?

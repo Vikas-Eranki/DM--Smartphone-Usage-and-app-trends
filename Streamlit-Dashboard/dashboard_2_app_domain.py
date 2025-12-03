@@ -1,4 +1,3 @@
-# category_analysis.py
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -28,7 +27,6 @@ def run():
         st.error("No dataset found. Place data/clean_apps.csv or configure kagglehub.")
         st.stop()
 
-    # ensure numeric conversion
     for c in ["Installs","Reviews","Rating","Price","Size"]:
         if c in df.columns:
             df[c] = pd.to_numeric(df[c], errors="coerce")
