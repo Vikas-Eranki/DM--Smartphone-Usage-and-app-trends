@@ -91,7 +91,7 @@ st.markdown("""
 
     .metric-label {
         font-size: 0.85rem;
-        color: #666;
+        color: black;
         letter-spacing: 0.5px;
         margin-top: 0.3rem;
     }

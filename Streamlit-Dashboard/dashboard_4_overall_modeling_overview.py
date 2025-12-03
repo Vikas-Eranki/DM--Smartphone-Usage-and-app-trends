@@ -2,14 +2,12 @@ import streamlit as st
 import pandas as pd
 import os
 import numpy as np
+import kagglehub
 
 @st.cache_data
 def load_dataset():
-    LOCAL="/Users/meenakshsinghania04/Desktop/DM--Smartphone-Usage-and-app-trends/Streamlit-Dashboard/dashboard_4_overall_modeling_overview.py"
-    if os.path.exists(LOCAL):
-        return pd.read_csv(LOCAL)
+
     try:
-        import kagglehub
         path=kagglehub.dataset_download("vikaseranki9/google-play-store-cleaned")
         for f in os.listdir(path):
             if f.endswith(".csv"):
