@@ -3,15 +3,13 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import os
+import kagglehub
+
 
 @st.cache_data
 def load_dataset():
-    LOCAL = "/Users/meenakshsinghania04/Desktop/DM--Smartphone-Usage-and-app-trends/data/processed/googleplaystore_cleaned.csv"
-    if os.path.exists(LOCAL):
-        df = pd.read_csv(LOCAL)
-        return df
+
     try:
-        import kagglehub
         path = kagglehub.dataset_download("vikaseranki9/google-play-store-cleaned")
         for f in os.listdir(path):
             if f.endswith(".csv"):

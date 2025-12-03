@@ -29,7 +29,7 @@ def run():
 
     @st.cache_data
     def load_data():
-        path = kagglehub.dataset_download("vikaseranki9/mobile-usage-behavioral-analysis-dataset")
+        path = kagglehub.dataset_download("vikaseranki9/mobile-usage-ds")
 
         csv_path = None
         for f in os.listdir(path):
