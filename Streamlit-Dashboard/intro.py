@@ -124,9 +124,9 @@ st.markdown("""
 PAGES = {
     "Project Overview": "dashboard_1_project_overview.py",
     "App Domain": "dashboard_2_app_domain.py",
-    "User Domain and Trends": "dashboard_3_user_domain_and_trends.py",
+    "Smartphone Usage Efficiency": "dashboard_5_smartphone_efficiency.py",
+    "Category Analysis": "dashboard_3_category_analysis.py",
     "Overall Modeling Overview": "dashboard_4_overall_modeling_overview.py",
-    "Smartphone Usage Efficiency": "dashboard_5_smartphone_efficiency.py"
 }
 
 BASE_DIR = Path(__file__).resolve().parent
