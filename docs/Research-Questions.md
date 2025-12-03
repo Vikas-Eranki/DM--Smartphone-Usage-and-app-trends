@@ -27,7 +27,7 @@ How do feature-rich apps (large size, multiple permissions, many functionalities
 
 ### **3. User Review Modeling & Sentiment Insights**
 
-How can user review text can be modeled to predict sentiment patterns and uncover the key factors that influence user satisfaction and perceived app quality?
+How effectively can we categorize user reviews into common feedback themes, enabling structured insight extraction from unstructured textual data?
 
 ## **B. Smartphone and User Efficiency Domain**
 
