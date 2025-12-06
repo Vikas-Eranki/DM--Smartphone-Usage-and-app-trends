@@ -185,20 +185,7 @@ def run():
     plt.title("Cluster Patterns")
     st.pyplot(fig)
 
-    st.subheader(" PCA 2D Visualization")
 
-    pca = PCA(n_components=2)
-    pca_data = pca.fit_transform(scaled)
-
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sns.scatterplot(
-        x=pca_data[:, 0],
-        y=pca_data[:, 1],
-        hue=df["cluster"],
-        palette="bright"
-    )
-    plt.title("PCA Cluster Plot")
-    st.pyplot(fig)
 
 
     st.subheader(" Final Insights")
